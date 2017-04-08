@@ -15,6 +15,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE="test"
 
 RDEPEND="app-shells/bash"
+PATCHES=("${FILESDIR}/todo-2.10-todo_completion.patch")
 
 S="${WORKDIR}/${PN}.txt-cli-${PV}"
 
@@ -25,9 +26,9 @@ src_test() {
 }
 
 src_install() {
-	# Renaming occur due to a clash with another package.
-	# See bug 610862.
-	newbin "${PN}.sh" "${PN}txt"
-	newbashcomp "${PN}_completion" "${PN}txt"
+	dobin "${PN}.sh"
+	dosym "/usr/bin/${PN}.sh" "/usr/bin/${PN}txt"
+	newbashcomp "${PN}_completion" "${PN}.sh"
+	bashcomp_alias "${PN}.sh" "${PN}txt"
 	einstalldocs
 }
