@@ -18,6 +18,8 @@ RDEPEND="
 	dev-perl/Perl-Tags
 	dev-perl/Perl-Critic"
 
+S="${WORKDIR}/${PN}-version-${PV}"
+
 src_prepare() {
 	# Don't set tabstop and shiftwidth
 	sed -i '/=4/s/^/"/' ftplugin/perl.vim || die
