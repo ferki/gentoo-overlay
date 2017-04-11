@@ -12,6 +12,8 @@ KEYWORDS="~amd64 ~ppc ~x86 ~amd64-linux ~x86-linux ~x86-macos"
 VIM_PLUGIN_HELPFILES="perlsupport.txt"
 
 RDEPEND="
+	!ppc? ( dev-perl/Devel-NYTProf )
+	dev-perl/Perl-Tidy
 	dev-perl/Perl-Tags
 	dev-perl/Perl-Critic"
 
