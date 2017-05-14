@@ -11,6 +11,6 @@
         <name>Patrick Lauer</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="pypi">carbonate</remote-id>
+		<remote-id type="github">graphite-project/carbonate</remote-id>
 	</upstream>
 </pkgmetadata>
