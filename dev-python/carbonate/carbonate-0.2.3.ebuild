@@ -10,7 +10,7 @@ inherit distutils-r1
 RESTRICT="test"
 
 DESCRIPTION="Utilities for managing graphite clusters"
-HOMEPAGE="https://github.com/jssjr/carbonate"
+HOMEPAGE="https://github.com/graphite-project/carbonate"
 SRC_URI="mirror://pypi/c/${PN}/${P}.tar.gz"
 
 SLOT="0"
