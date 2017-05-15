@@ -11,6 +11,8 @@
         <name>Patrick Lauer</name>
 	</maintainer>
 	<upstream>
+		<bugs-to>https://github.com/graphite-project/carbonate/issues</bugs-to>
+		<changelog>https://github.com/graphite-project/carbonate/blob/master/CHANGELOG.md</changelog>
 		<remote-id type="github">graphite-project/carbonate</remote-id>
 	</upstream>
 </pkgmetadata>
