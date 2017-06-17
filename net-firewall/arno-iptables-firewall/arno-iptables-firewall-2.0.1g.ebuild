@@ -1,8 +1,8 @@
 # Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=5
-inherit readme.gentoo systemd versionator
+EAPI=6
+inherit readme.gentoo-r1 systemd versionator
 
 DESCRIPTION="Arno's iptables firewall script"
 HOMEPAGE="http://rocky.eld.leidenuniv.nl"
@@ -44,6 +44,7 @@ src_prepare() {
 		etc/"${PN}"/firewall.conf || die "Sed failed!"
 	sed -i -e 's:/usr/local/sbin/:/usr/sbin/:' \
 		lib/systemd/system/"${PN}.service" || die "Sed failed!"
+	eapply_user
 }
 
 src_install() {
