@@ -8,7 +8,8 @@ DESCRIPTION="Arno's iptables firewall script"
 HOMEPAGE="http://rocky.eld.leidenuniv.nl"
 
 MY_PV=$(replace_version_separator 3 -)
-SRC_URI="http://rocky.eld.leidenuniv.nl/${PN}/${PN}_${MY_PV}.tar.gz"
+MY_PV=${MY_PV/rc/RC}
+SRC_URI="https://github.com/${PN}/aif/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -25,7 +26,7 @@ RDEPEND="net-firewall/ipset
 	sys-apps/iproute2
 	plugins? ( net-dns/bind-tools )"
 
-S="${WORKDIR}/${PN}_${MY_PV/rc/RC}"
+S="${WORKDIR}/aif-${MY_PV}"
 
 DISABLE_AUTOFORMATTING="yes"
 DOC_CONTENTS="You will need to configure /etc/${PN}/firewall.conf
