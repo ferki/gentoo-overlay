@@ -30,10 +30,6 @@ RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
 
-src_prepare() {
-	epatch "${FILESDIR}/gcalcli-oauth2client.patch"
-}
-
 src_install() {
 	dodoc -r ChangeLog README.md docs
 	python_foreach_impl python_doscript ${PN}
