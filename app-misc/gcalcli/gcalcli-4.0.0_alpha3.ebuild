@@ -8,9 +8,11 @@ PYTHON_COMPAT=( python2_7 )
 
 inherit python-r1
 
+MY_PV=${PV/_alpha/a}
+
 DESCRIPTION="Google Calendar Command Line Interface"
 HOMEPAGE="https://github.com/insanum/gcalcli"
-SRC_URI="https://github.com/insanum/gcalcli/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/insanum/gcalcli/archive/v${MY_PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -25,6 +27,8 @@ DEPEND="dev-python/python-dateutil[${PYTHON_USEDEP}]
 		 dev-python/vobject[${PYTHON_USEDEP}]
 		 dev-python/parsedatetime[${PYTHON_USEDEP}]"
 RDEPEND="${DEPEND}"
+
+S="${WORKDIR}/${PN}-${MY_PV}"
 
 src_prepare() {
 	epatch "${FILESDIR}/gcalcli-oauth2client.patch"
