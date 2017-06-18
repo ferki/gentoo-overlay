@@ -19,13 +19,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-python/python-dateutil[${PYTHON_USEDEP}]
-		 dev-python/google-api-python-client[${PYTHON_USEDEP}]
-		 dev-python/six[${PYTHON_USEDEP}]
-		 dev-python/httplib2[${PYTHON_USEDEP}]
-		 dev-python/oauth2client[${PYTHON_USEDEP}]
-		 dev-python/vobject[${PYTHON_USEDEP}]
-		 dev-python/parsedatetime[${PYTHON_USEDEP}]"
+DEPEND="
+	dev-python/python-dateutil[${PYTHON_USEDEP}]
+	dev-python/google-api-python-client[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
+	dev-python/httplib2[${PYTHON_USEDEP}]
+	dev-python/oauth2client[${PYTHON_USEDEP}]
+	dev-python/vobject[${PYTHON_USEDEP}]
+	dev-python/parsedatetime[${PYTHON_USEDEP}]
+"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${PN}-${MY_PV}"
