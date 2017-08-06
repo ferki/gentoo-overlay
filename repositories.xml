@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repositories version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name>ferki</name>
+    <description>FErki's Gentoo overlay</description>
+    <homepage>https://github.com/ferki/gentoo-overlay</homepage>
+    <owner type="person">
+      <email>erkiferenc@gmail.com</email>
+      <name>Ferenc Erki</name>
+    </owner>
+    <source type="git">https://github.com/ferki/gentoo-overlay.git</source>
+  </repo>
+</repositories>
