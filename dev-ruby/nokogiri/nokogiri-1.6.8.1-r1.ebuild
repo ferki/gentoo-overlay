@@ -31,7 +31,7 @@ DEPEND="${DEPEND}
 	virtual/libiconv"
 
 ruby_add_bdepend "
-	dev-ruby/hoe
+	>=dev-ruby/hoe-3.14
 	>=dev-ruby/pkg-config-1.1.7
 	dev-ruby/rexical
 	dev-ruby/rdoc
