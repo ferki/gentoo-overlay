@@ -6,13 +6,13 @@
         <name>Ferenc Erki</name>
         <description>Proxied maintainer; set to assignee in all bugs</description>
     </maintainer>
-	<maintainer type="person">
-		<email>patrick@gentoo.org</email>
+    <maintainer type="person">
+        <email>patrick@gentoo.org</email>
         <name>Patrick Lauer</name>
-	</maintainer>
-	<upstream>
-		<bugs-to>https://github.com/graphite-project/carbonate/issues</bugs-to>
-		<changelog>https://github.com/graphite-project/carbonate/blob/master/CHANGELOG.md</changelog>
-		<remote-id type="github">graphite-project/carbonate</remote-id>
-	</upstream>
+    </maintainer>
+    <upstream>
+        <bugs-to>https://github.com/graphite-project/carbonate/issues</bugs-to>
+        <changelog>https://github.com/graphite-project/carbonate/blob/master/CHANGELOG.md</changelog>
+        <remote-id type="github">graphite-project/carbonate</remote-id>
+    </upstream>
 </pkgmetadata>
