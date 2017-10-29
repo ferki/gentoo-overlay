@@ -33,8 +33,8 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "${PN} can utilize the following modules on top of the ones installed as a"
-	elog "dependency:"
+	elog "${PN} can utilize the following modules on top of the ones installed as"
+	elog "dependencies:"
 	elog
 	elog "Devel::SmallProf     - per-line Perl profiler"
 	elog "Devel::FastProf      - per-line Perl profiler"
