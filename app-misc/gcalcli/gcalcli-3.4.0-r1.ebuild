@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="dev-python/python-dateutil[${PYTHON_USEDEP}]
-		 dev-python/google-api-python-client[${PYTHON_USEDEP}]
+		 <dev-python/google-api-python-client-1.5.4[${PYTHON_USEDEP}]
 		 dev-python/python-gflags[${PYTHON_USEDEP}]
 		 dev-python/httplib2[${PYTHON_USEDEP}]
 		 dev-python/oauth2client[${PYTHON_USEDEP}]
