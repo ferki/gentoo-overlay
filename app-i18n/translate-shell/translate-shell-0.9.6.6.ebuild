@@ -28,13 +28,7 @@ DEPEND="${RDEPEND}
 	test? ( app-editors/emacs )
 	"
 
-src_test() {
-	# actual translation tests need network access,
-	# thus won't work inside a portage environment
-	sed -i -e "/\$(BUILDDIR)\/\$(COMMAND) -no-init/d" Makefile || die
-
-	emake check
-}
+PATCHES="${FILESDIR}/${P}-remove-online-tests.patch"
 
 src_install() {
 	emake PREFIX="${D}/usr" install
