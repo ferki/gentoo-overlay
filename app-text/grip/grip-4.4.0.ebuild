@@ -12,7 +12,7 @@ HOMEPAGE='https://github.com/joeyespo/grip'
 LICENSE='MIT'
 
 SLOT='0'
-SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.zip"
+SRC_URI="mirror://pypi/${PN:0:1}/${PN}/${P}.tar.gz"
 
 KEYWORDS='~amd64'
 
@@ -20,7 +20,7 @@ RDEPEND="
 	>=dev-python/docopt-0.6.2
 	>=dev-python/flask-0.10.1
 	>=dev-python/markdown-2.5.1
-	>=dev-python/path-and-address-1.0.0
+	>=dev-python/path-and-address-2.0.1
 	>=dev-python/pygments-1.6
 	>=dev-python/requests-2.4.1
 "
