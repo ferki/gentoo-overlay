@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>csmk+frabjous@chaoslab.org</email>
+		<name>Ian Moone</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">hashicorp/terraform</remote-id>
+		<bugs-to>https://github.com/hashicorp/terraform/issues</bugs-to>
+		<doc>https://www.terraform.io/docs/index.html</doc>
+	</upstream>
+	<longdescription lang="en">
+		Terraform is a tool for building, changing, and versioning
+		infrastructure safely and efficiently. Terraform can manage
+		existing and popular service providers as well as custom
+		in-house solutions.
+	</longdescription>
+	<use>
+		<flag name="fish-completion">Enable fish completion support</flag>
+		<flag name="terraform-bundle">Install a helper program to create "bundle archives"</flag>
+	</use>
+</pkgmetadata>
