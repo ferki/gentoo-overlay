@@ -43,7 +43,7 @@ src_compile() {
 	popd > /dev/null || die
 	eend $?
 
-	emake fmtcheck generate
+	emake generate
 
 	go install -v -ldflags \
 		"${GOLDFLAGS}" || die
