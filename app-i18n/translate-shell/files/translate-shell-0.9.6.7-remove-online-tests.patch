@@ -1,13 +1,15 @@
 diff --git a/Makefile b/Makefile
-index acc96e0..622e136 100644
+index bb932fc..622e136 100644
 --- a/Makefile
 +++ b/Makefile
-@@ -27,8 +27,6 @@ test: build
+@@ -27,10 +27,6 @@ test: build
  
  check: test
  	$(BUILDDIR)/$(COMMAND) -V
 -	[ "`$(BUILDDIR)/$(COMMAND) -no-init -D -b 忍者`" = 'Ninja' ] &&\
--	[ "`$(BUILDDIR)/$(COMMAND) -no-init -D -b 'hello world'`" = 'hello world' ]
+-	[ "`$(BUILDDIR)/$(COMMAND) -no-init -D -b -e bing 忍者`" = 'Ninja' ] &&\
+-	[ "`$(BUILDDIR)/$(COMMAND) -no-init -D -b -e yandex 忍者`" = 'Ninja' ] &&\
+-	[ "`$(BUILDDIR)/$(COMMAND) -no-init -D -b -e deepl Ninja`" = 'Ninja' ]
  
  install: build
  	@mkdir -p $(DESTDIR)$(PREFIX)/bin &&\
