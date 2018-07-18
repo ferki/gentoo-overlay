@@ -2,12 +2,12 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
-inherit readme.gentoo-r1 systemd versionator
+inherit readme.gentoo-r1 systemd eapi7-ver
 
 DESCRIPTION="Arno's iptables firewall script"
 HOMEPAGE="http://rocky.eld.leidenuniv.nl"
 
-MY_PV=$(replace_version_separator 3 -)
+MY_PV=$(ver_rs 3 -)
 MY_PV=${MY_PV/rc/RC}
 SRC_URI="https://github.com/${PN}/aif/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 
