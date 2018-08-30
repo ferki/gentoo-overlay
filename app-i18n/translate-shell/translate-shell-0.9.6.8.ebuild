@@ -28,7 +28,9 @@ DEPEND="${RDEPEND}
 	test? ( app-editors/emacs )
 	"
 
-PATCHES="${FILESDIR}/${P}-remove-online-tests.patch"
+src_test() {
+	emake NETWORK_ACCESS=no test
+}
 
 src_install() {
 	emake PREFIX="${D}/usr" install
