@@ -53,6 +53,10 @@ src_install() {
 	dodoc ${PN}/{filebeat.yml,filebeat.reference.yml}
 
 	dobin filebeat/filebeat
+
+	insinto "/usr/share/${PN}/kibana"
+	doins -r "${S}/filebeat/_meta/kibana.generated/5"
+	doins -r "${S}/filebeat/_meta/kibana.generated/6"
 }
 
 pkg_postinst() {
