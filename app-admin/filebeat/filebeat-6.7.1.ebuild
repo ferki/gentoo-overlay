@@ -38,6 +38,7 @@ src_prepare() {
 
 src_compile() {
 	GOPATH="${WORKDIR}" emake -C "${S}/filebeat"
+	GOPATH="${WORKDIR}" emake -C "${S}/filebeat" kibana
 }
 
 src_install() {
