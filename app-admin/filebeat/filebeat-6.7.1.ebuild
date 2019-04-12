@@ -54,6 +54,15 @@ src_install() {
 
 	dobin filebeat/filebeat
 
+	insinto "/etc/${PN}"
+	doins -r "${PN}/modules.d"
+
+	insinto "/usr/share/${PN}"
+	doins -r "${PN}/module"
+
+	find "${D}/usr/share/${PN}/module" -regex ".*_meta.*" -depth -delete
+	find "${D}/usr/share/${PN}/module" -regex ".*test.*" -depth -delete
+
 	insinto "/usr/share/${PN}/kibana"
 	doins -r "${S}/filebeat/_meta/kibana.generated/5"
 	doins -r "${S}/filebeat/_meta/kibana.generated/6"
