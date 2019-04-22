@@ -14,7 +14,7 @@ IUSE="+curl +bidi test tts"
 
 RDEPEND="
 	app-misc/rlwrap
-	>=sys-apps/gawk-4.0.2
+	=sys-apps/gawk-4*
 	curl? ( net-misc/curl[ssl] )
 	bidi? ( dev-libs/fribidi )
 	tts? ( || (
