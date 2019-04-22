@@ -10,7 +10,7 @@ SRC_URI="https://github.com/soimort/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Unlicense"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+curl +bidi test tts"
+IUSE="+bidi +curl test tts"
 
 RDEPEND="
 	app-misc/rlwrap
