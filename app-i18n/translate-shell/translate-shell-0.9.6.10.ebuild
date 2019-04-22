@@ -7,7 +7,7 @@ DESCRIPTION="Online command-line translator"
 HOMEPAGE="https://www.soimort.org/translate-shell/"
 SRC_URI="https://github.com/soimort/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="public-domain"
+LICENSE="Unlicense"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+curl +bidi test tts"
