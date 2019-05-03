@@ -47,7 +47,7 @@ src_install() {
 	fperms 0750 /var/{lib,log}/${PN}
 
 	newconfd "${FILESDIR}/${PN}.confd" ${PN}
-	newinitd "${FILESDIR}/${PN}.initd.1" ${PN}
+	newinitd "${FILESDIR}/${PN}.initd.2" ${PN}
 
 	docinto examples
 	dodoc ${PN}/{filebeat.yml,filebeat.reference.yml}
