@@ -39,6 +39,7 @@ src_prepare() {
 src_compile() {
 	GOPATH="${WORKDIR}" emake -C "${S}/filebeat"
 	GOPATH="${WORKDIR}" emake -C "${S}/filebeat" kibana
+	python "${S}/libbeat/scripts/unpack_dashboards.py" --glob="${S}/${PN}/_meta/kibana.generated/6/dashboard/*.json"
 }
 
 src_install() {
