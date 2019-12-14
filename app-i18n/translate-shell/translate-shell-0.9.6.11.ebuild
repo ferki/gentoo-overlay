@@ -3,6 +3,8 @@
 
 EAPI=7
 
+inherit eutils
+
 DESCRIPTION="Online command-line translator"
 HOMEPAGE="https://www.soimort.org/translate-shell/"
 SRC_URI="https://github.com/soimort/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
