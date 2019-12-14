@@ -10,20 +10,9 @@ SRC_URI="https://github.com/soimort/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="Unlicense"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+bidi +curl test tts"
+IUSE="test"
 
-RDEPEND="
-	app-misc/rlwrap
-	sys-apps/gawk
-	curl? ( net-misc/curl[ssl] )
-	bidi? ( dev-libs/fribidi )
-	tts? ( || (
-		media-sound/mpg123
-		app-accessibility/espeak
-		media-video/mpv
-		media-video/mplayer
-		)
-	)"
+RDEPEND="sys-apps/gawk"
 DEPEND="${RDEPEND}
 	test? ( virtual/emacs )
 	"
@@ -34,4 +23,13 @@ src_test() {
 
 src_install() {
 	emake PREFIX="${D}/usr" install
+}
+
+pkg_postinst() {
+	elog "You may need to install the following optional packages for full functionality:"
+	optfeature "Support all built-in translators (e.g. Apertium, Yandex)" net-misc/curl[ssl]
+	optfeature "Display text in right-to-left scripts" dev-libs/fribidi
+	optfeature "Text-to-speech functionality" media-sound/mpg123 app-accessibility/espeak media-video/mpv media-video/mplayer
+	optfeature "Interactive translation (REPL)" app-misc/rlwrap
+	optfeature "Spell checking" app-text/aspell app-text/hunspell
 }
