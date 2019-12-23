@@ -17,7 +17,7 @@ RESTRICT="!test? ( test )"
 
 RDEPEND="sys-apps/gawk"
 DEPEND="${RDEPEND}
-	test? ( virtual/emacs )
+	test? ( app-editors/emacs )
 	"
 
 src_test() {
