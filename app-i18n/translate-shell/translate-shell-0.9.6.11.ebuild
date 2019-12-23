@@ -17,8 +17,10 @@ RESTRICT="!test? ( test )"
 
 RDEPEND="sys-apps/gawk"
 DEPEND="${RDEPEND}
-	test? ( app-editors/emacs )
-	"
+	test? (
+		app-editors/emacs
+		app-misc/rlwrap
+	)"
 
 src_test() {
 	emake NETWORK_ACCESS=no test
