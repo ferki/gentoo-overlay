@@ -14,7 +14,7 @@ SRC_URI="https://github.com/${PN}/aif/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+plugins"
+IUSE="+plugins rsyslog"
 
 # sys-apps/coreutils dependency wrt
 # https://bugs.gentoo.org/show_bug.cgi?id=448716
@@ -81,6 +81,12 @@ src_install() {
 
 		docinto plugins
 		dodoc share/"${PN}"/plugins/*.CHANGELOG
+	fi
+
+	if use rsyslog
+	then
+		insinto /etc/rsyslog.d
+		newins etc/rsyslog.d/"${PN}".conf 60-"${PN}".conf
 	fi
 
 	doman share/man/man1/arno-fwfilter.1 \
