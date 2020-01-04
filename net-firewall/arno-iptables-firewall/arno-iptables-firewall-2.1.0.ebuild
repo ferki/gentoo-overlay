@@ -1,8 +1,8 @@
 # Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
-inherit readme.gentoo-r1 systemd eapi7-ver
+EAPI=7
+inherit readme.gentoo-r1 systemd
 
 DESCRIPTION="Arno's iptables firewall script"
 HOMEPAGE="https://rocky.eld.leidenuniv.nl"
