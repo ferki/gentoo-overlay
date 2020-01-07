@@ -16,13 +16,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+plugins rsyslog"
 
-# sys-apps/coreutils dependency wrt
-# https://bugs.gentoo.org/show_bug.cgi?id=448716
-
 DEPEND=""
 RDEPEND="net-firewall/ipset
 	net-firewall/iptables
-	>=sys-apps/coreutils-8.21
+	sys-apps/coreutils
 	sys-apps/iproute2
 	plugins? ( net-dns/bind-tools )"
 
