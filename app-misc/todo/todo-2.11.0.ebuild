@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -19,7 +19,7 @@ RDEPEND="app-shells/bash"
 
 PATCHES=( "${FILESDIR}/${P}-fix-bash-completion.patch" )
 
-DOCS=( README.textile CONTRIBUTING.md LICENSE todo.cfg )
+DOCS=( README.md CONTRIBUTING.md LICENSE todo.cfg )
 
 S="${WORKDIR}/${PN}.txt-cli-${PV}"
 
