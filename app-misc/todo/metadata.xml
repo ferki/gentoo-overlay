@@ -6,6 +6,6 @@
 		<name>Patrice Clement</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">ginatrapani/todo.txt-cli</remote-id>
+		<remote-id type="github">todotxt/todo.txt-cli</remote-id>
 	</upstream>
 </pkgmetadata>
