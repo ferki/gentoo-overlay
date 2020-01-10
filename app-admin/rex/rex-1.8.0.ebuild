@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -14,7 +14,7 @@ else
 	# This is intentional to stop perl-module.eclass doing magic things when it
 	# shouldn't. Like making ${S} contain "Rex" when the git clone has "rex"
 	# Also prevents perl-module.eclass provisioning SRC_URI
-	DIST_AUTHOR=JFRIED
+	DIST_AUTHOR=FERKI
 	DIST_NAME=Rex
 	KEYWORDS="~amd64 ~x86"
 fi
