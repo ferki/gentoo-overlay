@@ -7,7 +7,7 @@ if [[ ${PV} == 9999 ]]; then
 	GITHUB_USER=RexOps
 	GITHUB_REPO=Rex
 	EGIT_REPO_URI="https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git"
-	EGIT_BRANCH="development-1.x"
+	EGIT_BRANCH="master"
 	EGIT_CHECKOUT_DIR="${WORKDIR}/${PN}-git"
 	VCS_ECLASS="git-r3"
 else

@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -7,7 +7,7 @@ if [[ ${PV} == 9999 ]]; then
 	GITHUB_USER=RexOps
 	GITHUB_REPO=Rex
 	EGIT_REPO_URI="https://github.com/${GITHUB_USER}/${GITHUB_REPO}.git"
-	EGIT_BRANCH="development-1.x"
+	EGIT_BRANCH="master"
 	EGIT_CHECKOUT_DIR="${WORKDIR}/${PN}-git"
 	VCS_ECLASS="git-r3"
 else
