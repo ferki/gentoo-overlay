@@ -56,7 +56,6 @@ RDEPEND="
 	dev-perl/Sort-Naturally
 	dev-perl/String-Escape
 	dev-perl/TermReadKey
-	dev-perl/Test-Deep
 	dev-perl/Text-Glob
 	dev-perl/URI
 	dev-perl/XML-LibXML
@@ -77,6 +76,8 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 	test? (
+		dev-perl/Test-Deep
+		dev-perl/Test-Pod
 		dev-perl/Test-UseAllModules
 		virtual/perl-File-Temp
 	)
