@@ -48,7 +48,7 @@ RDEPEND="
 	dev-perl/IO-String
 	dev-perl/IO-Tty
 	dev-perl/IPC-Shareable
-	dev-perl/JSON-XS
+	dev-perl/JSON-MaybeXS
 	dev-perl/List-MoreUtils
 	dev-perl/Net-OpenSSH
 	dev-perl/Net-SFTP-Foreign
@@ -77,7 +77,6 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 	test? (
-		dev-perl/JSON-MaybeXS
 		dev-perl/Test-UseAllModules
 		virtual/perl-File-Temp
 	)
