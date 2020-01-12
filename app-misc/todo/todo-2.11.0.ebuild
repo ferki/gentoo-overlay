@@ -40,8 +40,7 @@ src_install() {
 	dosym "${PN}.sh" "/usr/bin/${PN}cli"
 	dosym "${PN}.sh" "/usr/bin/${PN}txt"
 	newbashcomp "${PN}_completion" "${PN}.sh"
-	bashcomp_alias "${PN}.sh" "${PN}cli"
-	bashcomp_alias "${PN}.sh" "${PN}txt"
+	bashcomp_alias "${PN}.sh" "${PN}cli" "${PN}txt"
 	einstalldocs
 }
 
