@@ -54,6 +54,11 @@ pkg_postinst() {
 	einfo 'configuration file in the same location:'
 	einfo "  $ bzcat /usr/share/doc/${PF}/todo.cfg.bz2 > \$HOME/.todo/config"
 	einfo
+	einfo 'Alternatively, you can use XDG directories instead:'
+	einfo '  $ mkdir -p $HOME/.local/share/todo'
+	einfo '  $ mkdir -p $HOME/.config/todo'
+	einfo "  $ bzcat /usr/share/doc/${PF}/todo.cfg.bz2 > \$HOME/.config/todo/config"
+	einfo
 	einfo 'You can then edit this file as you see fit.'
 	einfo 'Enjoy!'
 	einfo
