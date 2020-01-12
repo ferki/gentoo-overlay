@@ -26,6 +26,9 @@ S="${WORKDIR}/${PN}.txt-cli-${PV}"
 src_prepare() {
 	default
 
+	# fix version string
+	sed -i -e "s/@DEV_VERSION@/${PV}/" todo.sh || die
+
 	# TODO_DIR variable is bogus
 	sed -i -e '/export TODO_DIR/d' todo.cfg || die
 	sed -i -e '4i export TODO_DIR="$HOME/.todo"' todo.cfg || die
