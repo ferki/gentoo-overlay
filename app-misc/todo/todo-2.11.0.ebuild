@@ -6,7 +6,7 @@ EAPI=7
 inherit bash-completion-r1
 
 DESCRIPTION="A CLI-based TODO list manager"
-HOMEPAGE="http://todotxt.com"
+HOMEPAGE="http://todotxt.org"
 SRC_URI="https://github.com/todotxt/${PN}.txt-cli/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
