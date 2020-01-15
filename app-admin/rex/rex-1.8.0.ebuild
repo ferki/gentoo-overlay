@@ -21,7 +21,7 @@ fi
 
 inherit perl-module ${VCS_ECLASS}
 
-DESCRIPTION="(R)?ex is a small script to ease the execution of remote commands"
+DESCRIPTION="(R)?ex, the friendly automation framework"
 
 SLOT="0"
 IUSE="test"
