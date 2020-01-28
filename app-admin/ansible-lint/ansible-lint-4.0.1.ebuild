@@ -20,7 +20,7 @@ RESTRICT="!test? ( test )"
 CDEPEND="app-admin/ansible[${PYTHON_USEDEP}]
 		dev-python/pyyaml[${PYTHON_USEDEP}]
 		dev-python/six[${PYTHON_USEDEP}]"
-DEPEND="dev-python/setuptools[${PYTHON_USEDEP}]
+DEPEND="<=dev-python/setuptools-41.4.0[${PYTHON_USEDEP}]
 		dev-python/setuptools-git[${PYTHON_USEDEP}]
 		dev-python/setuptools_scm[${PYTHON_USEDEP}]
 		dev-python/setuptools_scm_git_archive[${PYTHON_USEDEP}]
