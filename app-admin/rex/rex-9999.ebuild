@@ -77,7 +77,6 @@ DEPEND="
 	${RDEPEND}
 	test? (
 		dev-perl/Test-Deep
-		dev-perl/Test-Pod
 		dev-perl/Test-UseAllModules
 		virtual/perl-File-Temp
 	)
