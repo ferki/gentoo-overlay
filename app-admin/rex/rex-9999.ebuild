@@ -73,8 +73,11 @@ RDEPEND="
 	virtual/perl-Time-HiRes
 "
 
-DEPEND="
+DEPEND="${RDEPEND}"
+
+BDEPEND="
 	${RDEPEND}
+	virtual/perl-ExtUtils-MakeMaker
 	test? (
 		dev-perl/Test-Deep
 		dev-perl/Test-UseAllModules
@@ -82,7 +85,7 @@ DEPEND="
 	)
 "
 
-[[ ${PV} == 9999 ]] && DEPEND+=" ${DZIL_DEPENDS}"
+[[ ${PV} == 9999 ]] && BDEPEND+=" ${DZIL_DEPENDS}"
 
 src_unpack() {
 	if [[ $PV == 9999 ]]; then
