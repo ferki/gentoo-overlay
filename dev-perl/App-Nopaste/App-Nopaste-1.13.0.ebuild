@@ -1,10 +1,10 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2020 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
 DIST_AUTHOR=ETHER
-DIST_VERSION=1.012
+DIST_VERSION=1.013
 inherit perl-module
 
 DESCRIPTION="Easy access to any pastebin"
