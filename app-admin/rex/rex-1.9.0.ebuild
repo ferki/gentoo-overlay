@@ -73,8 +73,6 @@ RDEPEND="
 	virtual/perl-Time-HiRes
 "
 
-DEPEND="${RDEPEND}"
-
 BDEPEND="
 	${RDEPEND}
 	virtual/perl-ExtUtils-MakeMaker
