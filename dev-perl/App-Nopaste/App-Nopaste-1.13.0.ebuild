@@ -41,7 +41,7 @@ RDEPEND="
 		dev-perl/Browser-Open
 	)
 "
-DEPEND="${RDEPEND}
+BDEPEND="${RDEPEND}
 	>=virtual/perl-CPAN-Meta-Requirements-2.120.620
 	virtual/perl-ExtUtils-MakeMaker
 	virtual/perl-Module-Metadata
