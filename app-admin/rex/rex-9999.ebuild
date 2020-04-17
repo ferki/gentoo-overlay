@@ -14,11 +14,10 @@ else
 	# This is intentional to stop perl-module.eclass doing magic things when it
 	# shouldn't. Like making ${S} contain "Rex" when the git clone has "rex"
 	# Also prevents perl-module.eclass provisioning SRC_URI
-	DIST_AUTHOR=JFRIED
+	DIST_AUTHOR=FERKI
 	DIST_NAME=Rex
 	KEYWORDS="~amd64 ~x86"
 fi
-
 inherit perl-module ${VCS_ECLASS}
 
 DESCRIPTION="(R)?ex, the friendly automation framework"
@@ -29,59 +28,65 @@ RESTRICT="!test? ( test )"
 
 DZIL_DEPENDS="
 	dev-perl/Dist-Zilla
+	dev-perl/Dist-Zilla-Plugin-CheckExtraTests
+	dev-perl/Dist-Zilla-Plugin-ContributorsFile
+	dev-perl/Dist-Zilla-Plugin-Git-Contributors
 	dev-perl/Dist-Zilla-Plugin-MakeMaker-Awesome
+	dev-perl/Dist-Zilla-Plugin-Meta-Contributors
 	dev-perl/Dist-Zilla-Plugin-MetaProvides-Package
+	dev-perl/Dist-Zilla-Plugin-NextVersion-Semantic
 	dev-perl/Dist-Zilla-Plugin-OSPrereqs
 	dev-perl/Dist-Zilla-Plugin-OurPkgVersion
-	dev-perl/Dist-Zilla-Plugin-Test-MinimumVersion
-	dev-perl/Dist-Zilla-Plugin-Test-Perl-Critic
+	dev-perl/Dist-Zilla-Plugin-Run
+	dev-perl/Software-License
 "
-
 RDEPEND="
+	virtual/perl-Carp
+	virtual/perl-Data-Dumper
 	dev-perl/Data-Validate-IP
 	dev-perl/DBI
 	dev-perl/Devel-Caller
 	dev-perl/Digest-HMAC
-	dev-perl/Digest-SHA1
+	virtual/perl-Digest-MD5
 	dev-perl/Expect
+	virtual/perl-Exporter
+	virtual/perl-File-Spec
+	dev-perl/HTTP-Message
 	dev-perl/Hash-Merge
+	virtual/perl-IO
 	dev-perl/IO-String
 	dev-perl/IO-Tty
 	dev-perl/IPC-Shareable
 	dev-perl/JSON-MaybeXS
 	dev-perl/List-MoreUtils
+	virtual/perl-MIME-Base64
 	dev-perl/Net-OpenSSH
 	dev-perl/Net-SFTP-Foreign
+	virtual/perl-Scalar-List-Utils
 	dev-perl/Parallel-ForkManager
 	dev-perl/Sort-Naturally
 	dev-perl/String-Escape
+	virtual/perl-Storable
 	dev-perl/TermReadKey
+	virtual/perl-Test-Simple
 	dev-perl/Text-Glob
+	virtual/perl-Text-Tabs+Wrap
+	virtual/perl-Time-HiRes
 	dev-perl/URI
 	dev-perl/XML-LibXML
 	dev-perl/XML-Simple
 	dev-perl/libwww-perl
 	dev-perl/YAML
-	virtual/perl-Carp
-	virtual/perl-Data-Dumper
-	virtual/perl-Digest-MD5
-	virtual/perl-Exporter
-	virtual/perl-File-Spec
-	virtual/perl-MIME-Base64
-	virtual/perl-Scalar-List-Utils
-	virtual/perl-Storable
-	virtual/perl-Time-HiRes
+	virtual/perl-version
 "
-
-DEPEND="${RDEPEND}"
 
 BDEPEND="
 	${RDEPEND}
-	virtual/perl-ExtUtils-MakeMaker
+	>=virtual/perl-ExtUtils-MakeMaker-7.110.100
 	test? (
-		dev-perl/Test-Deep
-		dev-perl/Test-UseAllModules
 		virtual/perl-File-Temp
+		dev-perl/Test-Deep
+		>=dev-perl/Test-UseAllModules-0.150.0
 	)
 "
 
@@ -96,12 +101,44 @@ src_unpack() {
 	fi
 }
 
+dzil_src_prep() {
+	einfo "Patching dist.ini"
+
+	# This block of sed invocations removes all plugins that aren't
+	# useful for users to have on Gentoo, because all of them are
+	# conditional and subjective style checks, which don't indicate
+	# a real issue for users, and paying the price of their dependencies is undesired.
+
+	# The {N;d} trick adds the [n]ext line after the match to the pattern-space
+	# so that the final [d]elete deletes the next line too. Can be expanded for each
+	# line, ie: {N;N;N;d} deletes 3 lines after the match as well as the match.
+	sed -e '/^\[Test::Kwalitee\]/d' \
+		-e '/^\[Test::Perl::Critic\]/d' \
+		-e '/^\[PodSyntaxTests\]/d' \
+		-e '/^Test::Kwalitee =/d' \
+		-e '/^Test::PerlTidy =/d' \
+		-e '/^Test::Pod =/d' \
+		-e '/^\[Test::CPAN::Changes\]/{N;d}' \
+		-e '/^\[Test::MinimumVersion\]/{N;d}' \
+		-i dist.ini || die "Can't patch dist.ini"
+}
+dzil_env_setup() {
+	# NextVersion noise :(
+	mkdir -p ~/.dzil/
+	local user="$(whoami)"
+	local host="$(hostname)"
+	printf '[%%User]\nname = %s\nemail = %s' "${user}" "${user}@${host}" >> ~/.dzil/config.ini
+
+}
 dzil_to_distdir() {
 	local dzil_root dest has_missing modname dzil_version
 	dzil_root="$1"
 	dest="$2"
 
 	cd "${dzil_root}" || die "Can't enter git workdir '${dzil_root}'";
+
+	dzil_src_prep
+	dzil_env_setup
 
 	dzil_version="$(dzil version)" || die "Error invoking 'dzil version'"
 	einfo "Generating CPAN dist with ${dzil_version}"
