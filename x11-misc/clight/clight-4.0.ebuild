@@ -28,7 +28,7 @@ DEPEND="
 
 RDEPEND="
 	${DEPEND}
-	dev-libs/clightd
+	app-misc/clightd
 	geoclue? ( app-misc/geoclue )
 	upower? ( sys-power/upower )
 "
