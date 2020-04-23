@@ -170,7 +170,7 @@ dzil_to_distdir() {
 	done < <( dzil listdeps --missing --versions --author )
 
 	einfo "Generating release"
-	V=${PV} dzil build --notgz --in "${dest}" || die "Unable to build CPAN dist in '${dest}'"
+	dzil build --notgz --in "${dest}" || die "Unable to build CPAN dist in '${dest}'"
 }
 
 src_prepare() {
