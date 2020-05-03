@@ -11,7 +11,7 @@ DESCRIPTION="A C daemon that turns your webcam into a light sensor"
 HOMEPAGE="https://github.com/FedeDP/Clight"
 
 EGIT_REPO_URI="https://github.com/FedeDP/${MY_PN}"
-EGIT_BRANCH="devel"
+EGIT_BRANCH="master"
 
 LICENSE="GPL-3"
 SLOT="0"
