@@ -43,6 +43,6 @@ src_install() {
 }
 
 pkg_postinst() {
-	ewarn "Please run env-update and, then source /etc/profile in any open shells"
+	ewarn "Please run env-update and then source /etc/profile in any open shells"
 	ewarn "to update terminfo settings. Relogin to update it for any new shells."
 }
