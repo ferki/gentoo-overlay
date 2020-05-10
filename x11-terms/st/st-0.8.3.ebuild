@@ -18,6 +18,7 @@ RDEPEND="
 	media-libs/fontconfig
 	x11-libs/libX11
 	x11-libs/libXft
+	~x11-terms/st-terminfo-${PV}
 "
 DEPEND="
 	${RDEPEND}
