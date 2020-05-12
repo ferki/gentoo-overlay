@@ -21,8 +21,9 @@ RDEPEND="
 "
 
 src_install() {
-	for bin in clipdel clipfsck clipmenu clipmenud; do
-		dobin ${bin}
+	local binfile
+	for binfile in clipdel clipfsck clipmenu clipmenud; do
+		dobin ${binfile}
 	done
 
 	systemd_douserunit "init/clipmenud.service"
