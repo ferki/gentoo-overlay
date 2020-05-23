@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-USE_RUBY="ruby24 ruby25"
+USE_RUBY="ruby24 ruby25 ruby26"
 RUBY_FAKEGEM_RECIPE_DOC="rdoc"
 RUBY_FAKEGEM_RECIPE_TEST="rspec2"
 
@@ -23,19 +23,23 @@ DEPEND+="test? ( dev-vcs/git )"
 RDEPEND+="dev-vcs/git"
 
 ruby_add_bdepend "
-	test? ( >dev-ruby/rack-test-0.6 )
+	test? (
+		>dev-ruby/rack-test-0.6
+		dev-ruby/rspec:2
+		dev-ruby/rspec-its
+	)
 	>dev-ruby/sinatra-1.3
 "
 
 ruby_add_rdepend "
-	dev-ruby/backports
-	>dev-ruby/faraday-0.9
-	>=dev-ruby/faraday_middleware-0.9.1
-	>dev-ruby/gh-0.13
-	>=dev-ruby/highline-1.6:0
+	>=dev-ruby/faraday-1.0.1:1
+	>=dev-ruby/faraday_middleware-1.0.0:1
+	>=dev-ruby/gh-0.17
+	dev-ruby/highline:2
 	>dev-ruby/launchy-2.1
 	>dev-ruby/pusher-client-0.4
 	dev-ruby/typhoeus:0
+	dev-ruby/json:2
 "
 
 all_ruby_prepare() {
