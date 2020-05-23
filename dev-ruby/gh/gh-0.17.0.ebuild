@@ -26,8 +26,8 @@ ruby_add_bdepend "
 ruby_add_rdepend "
 	dev-ruby/activesupport:5.2
 	>=dev-ruby/addressable-2.4.0:0
-	>dev-ruby/faraday-0.8
-	>=dev-ruby/faraday_middleware-0.14:0
+	>=dev-ruby/faraday-1.0.1:1
+	>=dev-ruby/faraday_middleware-1.0.0:1
 	>dev-ruby/multi_json-1.0
 	dev-ruby/net-http-pipeline
 	dev-ruby/net-http-persistent:*
