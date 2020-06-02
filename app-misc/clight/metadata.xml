@@ -6,6 +6,6 @@
 		<name>Ferenc Erki</name>
 	</maintainer>
 	<use>
-		<flag name="geoclue">Enable geolocation support through app-misc/geoclue</flag>
+		<flag name="geoclue">Enable geolocation support through <pkg>app-misc/geoclue</pkg></flag>
 	</use>
 </pkgmetadata>
