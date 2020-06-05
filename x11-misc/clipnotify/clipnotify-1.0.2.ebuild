@@ -17,7 +17,6 @@ DEPEND="
 	x11-libs/libXfixes
 "
 RDEPEND="${DEPEND}"
-BDEPEND="${DEPEND}"
 
 src_install() {
 	dobin clipnotify
