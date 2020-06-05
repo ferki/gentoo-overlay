@@ -20,6 +20,10 @@ RDEPEND="
 	x11-misc/xsel
 "
 
+src_compile() {
+	:
+}
+
 src_install() {
 	local binfile
 	for binfile in clipdel clipfsck clipmenu clipmenud; do
