@@ -17,8 +17,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bash-completion geoclue upower"
 
-PATCHES=( "${FILESDIR}/clight-4.0-icon-extension.patch" )
-
 DEPEND="
 	|| ( sys-auth/elogind sys-apps/systemd )
 	dev-libs/popt
