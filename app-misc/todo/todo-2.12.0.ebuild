@@ -19,7 +19,7 @@ RDEPEND="app-shells/bash"
 
 PATCHES=( "${FILESDIR}/${P}-fix-bash-completion.patch" )
 
-DOCS=( README.md CONTRIBUTING.md LICENSE todo.cfg )
+DOCS=( README.md LICENSE todo.cfg )
 
 S="${WORKDIR}/${PN}.txt-cli-${PV}"
 

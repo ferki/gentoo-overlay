@@ -2,7 +2,7 @@ diff --git a/todo_completion b/todo_completion
 index 644be6e..964383e 100755
 --- a/todo_completion
 +++ b/todo_completion
-@@ -85,6 +85,10 @@ _todo()
+@@ -92,6 +92,10 @@ _todo()
  }
  complete -F _todo todo.sh
  
