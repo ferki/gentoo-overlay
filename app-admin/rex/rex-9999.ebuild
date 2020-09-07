@@ -122,6 +122,7 @@ dzil_src_prep() {
 		-e '/^Test::PerlTidy =/d' \
 		-e '/^Test::Pod =/d' \
 		-e '/^\[Test::CPAN::Changes\]/{N;d}' \
+		-e '/^\[OptionalFeature/,/^$/d' \
 		-e '/^\[Test::MinimumVersion\]/{N;d}' \
 		-i dist.ini || die "Can't patch dist.ini"
 }
