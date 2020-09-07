@@ -30,6 +30,7 @@ DZIL_DEPENDS="
 	dev-perl/Dist-Zilla
 	dev-perl/Dist-Zilla-Plugin-CheckExtraTests
 	dev-perl/Dist-Zilla-Plugin-ContributorsFile
+	dev-perl/Dist-Zilla-Plugin-Git
 	dev-perl/Dist-Zilla-Plugin-Git-Contributors
 	dev-perl/Dist-Zilla-Plugin-MakeMaker-Awesome
 	dev-perl/Dist-Zilla-Plugin-Meta-Contributors
@@ -87,6 +88,7 @@ BDEPEND="
 	test? (
 		virtual/perl-File-Temp
 		dev-perl/Test-Deep
+		dev-perl/Test-Output
 		>=dev-perl/Test-UseAllModules-0.150.0
 		virtual/perl-autodie
 	)
@@ -121,6 +123,7 @@ dzil_src_prep() {
 		-e '/^Test::PerlTidy =/d' \
 		-e '/^Test::Pod =/d' \
 		-e '/^\[Test::CPAN::Changes\]/{N;d}' \
+		-e '/^\[OptionalFeature/,/^$/d' \
 		-e '/^\[Test::MinimumVersion\]/{N;d}' \
 		-i dist.ini || die "Can't patch dist.ini"
 }
