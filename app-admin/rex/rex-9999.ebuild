@@ -88,6 +88,7 @@ BDEPEND="
 	test? (
 		virtual/perl-File-Temp
 		dev-perl/Test-Deep
+		dev-perl/Test-Output
 		>=dev-perl/Test-UseAllModules-0.150.0
 		virtual/perl-autodie
 	)
