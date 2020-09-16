@@ -59,6 +59,9 @@ src_install() {
 	insinto /usr/libexec/"${PN}"
 	doins share/"${PN}"/environment
 
+	insinto /etc/logrotate.d
+	doins etc/logrotate.d/"${PN}"
+
 	dodoc CHANGELOG README
 	readme.gentoo_create_doc
 
