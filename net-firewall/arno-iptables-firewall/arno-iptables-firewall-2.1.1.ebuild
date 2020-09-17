@@ -76,7 +76,9 @@ src_install() {
 		doins share/"${PN}"/plugins/*.plugin
 
 		exeinto /usr/libexec/"${PN}"/plugins
+		doexe share/"${PN}"/plugins/adaptive-ban-helper
 		doexe share/"${PN}"/plugins/dyndns-host-open-helper
+		doexe share/"${PN}"/plugins/parasitic-net-helper
 		doexe share/"${PN}"/plugins/traffic-accounting-helper
 		doexe share/"${PN}"/plugins/traffic-accounting-log-rotate
 		doexe share/"${PN}"/plugins/traffic-accounting-show
