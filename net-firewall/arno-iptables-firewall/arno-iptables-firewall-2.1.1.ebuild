@@ -39,7 +39,7 @@ systemctl enable ${PN} (for systemd)"
 
 src_prepare() {
 	sed -i -e 's:/usr/local/share/:/usr/libexec/:' \
-		etc/"${PN}"/firewall.conf || die "Sed failed!"
+		bin/"${PN}" share/"${PN}"/environment || die "Sed failed!"
 	sed -i -e 's:/usr/local/sbin/:/usr/sbin/:' \
 		lib/systemd/system/"${PN}.service" || die "Sed failed!"
 	eapply_user
