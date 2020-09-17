@@ -57,6 +57,8 @@ src_install() {
 	dosbin bin/"${PN}"
 
 	insinto /usr/libexec/"${PN}"
+	doins share/"${PN}"/aif-job-execute
+	doins share/"${PN}"/aif-job-processor
 	doins share/"${PN}"/environment
 
 	insinto /etc/logrotate.d
