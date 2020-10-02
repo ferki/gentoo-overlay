@@ -5,7 +5,7 @@ EAPI=7
 inherit readme.gentoo-r1 systemd
 
 DESCRIPTION="Arno's iptables firewall script"
-HOMEPAGE="https://rocky.eld.leidenuniv.nl"
+HOMEPAGE="https://rocky.eld.leidenuniv.nl https://github.com/arno-iptables-firewall/aif"
 
 MY_PV=$(ver_rs 3 -)
 MY_PV=${MY_PV/rc/RC}
