@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-USE_RUBY="ruby24 ruby25 ruby26"
+USE_RUBY="ruby25 ruby26"
 RUBY_FAKEGEM_RECIPE_TEST="rspec3"
 
 RUBY_FAKEGEM_EXTRAINSTALL="assets"
@@ -34,7 +34,6 @@ ruby_add_rdepend "
 	>=dev-ruby/json-2.3:2
 	>=dev-ruby/launchy-2.1
 	>dev-ruby/pusher-client-0.4
-	dev-ruby/typhoeus:0
 "
 
 all_ruby_prepare() {
@@ -50,6 +49,8 @@ all_ruby_prepare() {
 
 	# Remove failing specs where $params keys are reset somewhere.
 	rm -f spec/cli/{cancel,restart}_spec.rb || die
+
+	sed -i 's/json_pure/json/g' ../metadata || die
 }
 
 all_ruby_install() {
