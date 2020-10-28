@@ -26,7 +26,7 @@ src_compile() {
 
 src_install() {
 	local binfile
-	for binfile in clipdel clipfsck clipmenu clipmenud; do
+	for binfile in clipctl clipdel clipfsck clipmenu clipmenud; do
 		dobin ${binfile}
 	done
 
