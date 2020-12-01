@@ -39,6 +39,8 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND="${DEPEND}"
 
+PATCHES=("${FILESDIR}/${PN}-libexec.patch")
+
 src_configure() {
 	local mycmakeargs=(
 		-DENABLE_DDC=$(usex ddc)
