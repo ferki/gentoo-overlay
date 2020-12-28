@@ -20,14 +20,19 @@ IUSE="ddc dpms gamma screen yoctolight"
 DEPEND="
 	>=dev-libs/libmodule-5.0.0
 	sys-auth/polkit
+	virtual/jpeg
 	virtual/libudev
 	|| ( sys-auth/elogind sys-apps/systemd )
 	ddc? ( >=app-misc/ddcutil-0.9.5 )
 	dpms? (
+		dev-libs/wayland
+		x11-libs/libdrm
 		x11-libs/libXext
 		x11-libs/libX11
 	)
 	gamma? (
+		dev-libs/wayland
+		x11-libs/libdrm
 		x11-libs/libXrandr
 		x11-libs/libX11
 	)
