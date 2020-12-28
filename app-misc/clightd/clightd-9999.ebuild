@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit cmake git-r3 xdg-utils
+inherit cmake git-r3
 
 MY_PN="${PN^}"
 
