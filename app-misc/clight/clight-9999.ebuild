@@ -26,14 +26,14 @@ DEPEND="
 
 RDEPEND="
 	${DEPEND}
-	app-misc/clightd
-	geoclue? ( app-misc/geoclue )
+	>=app-misc/clightd-5.0
+	geoclue? ( app-misc/geoclue:2.0 )
 	upower? ( sys-power/upower )
 "
 
 BDEPEND="
 	${DEPEND}
-	dev-libs/libmodule
+	>=dev-libs/libmodule-5.0.0
 	dev-util/cmake
 	sys-apps/dbus
 	virtual/pkgconfig
