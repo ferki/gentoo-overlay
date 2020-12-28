@@ -15,7 +15,7 @@ EGIT_BRANCH="master"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="ddc dpms gamma screen"
+IUSE="ddc dpms gamma screen yoctolight"
 
 DEPEND="
 	|| ( sys-auth/elogind sys-apps/systemd )
@@ -34,6 +34,9 @@ DEPEND="
 	screen? (
 		x11-libs/libX11
 	)
+	yoctolight? (
+		virtual/libusb:1
+	)
 "
 
 RDEPEND="${DEPEND}"
@@ -45,6 +48,7 @@ src_configure() {
 		-DENABLE_DPMS=$(usex dpms)
 		-DENABLE_GAMMA=$(usex gamma)
 		-DENABLE_SCREEN=$(usex screen)
+		-DENABLE_YOCTOLIGHT=$(usex yoctolight)
 	)
 
 	cmake_src_configure
