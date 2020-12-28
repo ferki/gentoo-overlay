@@ -18,10 +18,10 @@ SLOT="0"
 IUSE="ddc dpms gamma screen yoctolight"
 
 DEPEND="
-	|| ( sys-auth/elogind sys-apps/systemd )
-	virtual/libudev
 	>=dev-libs/libmodule-5.0.0
 	sys-auth/polkit
+	virtual/libudev
+	|| ( sys-auth/elogind sys-apps/systemd )
 	ddc? ( >=app-misc/ddcutil-0.9.5 )
 	dpms? (
 		x11-libs/libXext
