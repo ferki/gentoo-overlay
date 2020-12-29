@@ -47,6 +47,8 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND="${DEPEND}"
 
+PATCHES=("${FILESDIR}/${PN}-dbus-service.patch")
+
 src_configure() {
 	local mycmakeargs=(
 		-DENABLE_DDC=$(usex ddc)
