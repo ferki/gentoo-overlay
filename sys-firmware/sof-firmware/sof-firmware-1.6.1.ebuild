@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -16,12 +16,10 @@ IUSE=""
 S=${WORKDIR}/sof-bin-stable-v${PV}
 
 src_compile() {
-	sed -i -e '1i #!/bin/bash\nset -e' \
-		   -e '/^ROOT=/d' \
-		   -e "s/^VERSION=.*/VERSION=v${PV}/" go.sh || die
+	sed -i -e '2i set -e' go.sh || die
 }
 
 src_install() {
-	mkdir -p ${D}/lib/firmware || die
-	ROOT=${D} ${S}/go.sh || die
+	mkdir -p "${D}/lib/firmware" || die
+	ROOT=${D} SOF_VERSION="v${PV}" ${S}/go.sh || die
 }
