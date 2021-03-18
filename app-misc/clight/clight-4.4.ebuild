@@ -1,4 +1,4 @@
-# Copyright 2020 Gentoo Authors
+# Copyright 2020-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -17,26 +17,30 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="bash-completion geoclue upower"
 
+PATCHES=(
+	"${FILESDIR}/clight-gentoo-skip-manpage-compression.patch"
+)
+
 DEPEND="
-	|| ( sys-auth/elogind sys-apps/systemd )
+	dev-libs/libconfig
 	dev-libs/popt
 	sci-libs/gsl
-	dev-libs/libconfig
+	|| ( sys-auth/elogind sys-apps/systemd )
 "
 
 RDEPEND="
 	${DEPEND}
-	app-misc/clightd
-	geoclue? ( app-misc/geoclue )
+	>=app-misc/clightd-5.0
+	geoclue? ( app-misc/geoclue:2.0 )
 	upower? ( sys-power/upower )
 "
 
 BDEPEND="
 	${DEPEND}
-	dev-libs/libmodule
+	>=dev-libs/libmodule-5.0.0
 	dev-util/cmake
-	virtual/pkgconfig
 	sys-apps/dbus
+	virtual/pkgconfig
 	bash-completion? ( app-shells/bash-completion )
 "
 
