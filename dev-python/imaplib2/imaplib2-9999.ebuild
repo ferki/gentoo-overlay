@@ -9,9 +9,7 @@ inherit distutils-r1 git-r3
 
 DESCRIPTION="Threaded Python IMAP4 client."
 HOMEPAGE="https://github.com/jazzband/imaplib2"
-EGIT_REPO_URI="https://github.com/EvaSDK/${PN}.git"
-EGIT_BRANCH="fix_packaging"
-EGIT_COMMIT="8ab2554bb73cb367c141d63d96044ad4719300c0"
+EGIT_REPO_URI="https://github.com/jazzband/${PN}.git"
 
 LICENSE="MIT"
 SLOT="0"
