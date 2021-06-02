@@ -27,10 +27,15 @@ RDEPEND="
 	>=dev-python/urllib3-1.25.9[${PYTHON_USEDEP}]
 	kerberos? ( dev-python/gssapi[${PYTHON_USEDEP}] )
 "
-BDEPEND=""
+BDEPEND="
+	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+"
+
+distutils_enable_tests pytest
 
 src_prepare() {
 	sed -i "/^__version__/ s/\"\(.*\)\"/\"${PV}\"/" offlineimap/__init__.py
+	mv test/credentials.conf.sample test/credentials.conf
 	distutils-r1_src_prepare
 }
 
