@@ -9,9 +9,7 @@ inherit distutils-r1 git-r3
 
 DESCRIPTION="Powerful IMAP/Maildir synchronization and reader support"
 HOMEPAGE="https://github.com/OfflineIMAP/offlineimap3"
-EGIT_REPO_URI="https://github.com/EvaSDK/${PN}.git"
-EGIT_COMMIT="df35e6cedcabf60fdcb9638edd27dbcb71f2112c"
-EGIT_BRANCH="packaging"
+EGIT_REPO_URI="https://github.com/OfflineIMAP/${PN}.git"
 
 LICENSE="GPL-2+"
 SLOT="0"
