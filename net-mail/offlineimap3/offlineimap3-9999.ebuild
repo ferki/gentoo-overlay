@@ -36,6 +36,7 @@ distutils_enable_tests pytest
 src_prepare() {
 	sed -i "/^__version__/ s/\"\(.*\)\"/\"${PV}\"/" offlineimap/__init__.py
 	mv test/credentials.conf.sample test/credentials.conf
+	rm test/tests/test_01_basic.py
 	distutils-r1_src_prepare
 }
 
