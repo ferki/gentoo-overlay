@@ -3,18 +3,25 @@
 
 EAPI=7
 
-inherit cmake
-
 MY_PN="${PN^}"
-S="${WORKDIR}/${P^}"
+
+if [[ ${PV} == 9999 ]]; then
+	EGIT_REPO_URI="https://github.com/FedeDP/${MY_PN}"
+	EGIT_BRANCH="master"
+	VCS_ECLASS="git-r3"
+else
+	SRC_URI="https://github.com/FedeDP/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	S="${WORKDIR}/${P^}"
+	KEYWORDS="~amd64 ~x86"
+fi
+
+inherit cmake ${VCS_ECLASS}
 
 DESCRIPTION="A linux bus interface for screen settings (brightness, gamma, etc.)"
 HOMEPAGE="https://github.com/FedeDP/Clightd"
-SRC_URI="https://github.com/FedeDP/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE="ddc dpms gamma screen yoctolight"
 
 DEPEND="
