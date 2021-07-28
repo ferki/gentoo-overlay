@@ -3,15 +3,22 @@
 
 EAPI=7
 
-inherit cmake git-r3 xdg-utils
-
 MY_PN="${PN^}"
+
+if [[ ${PV} == 9999 ]]; then
+	EGIT_REPO_URI="https://github.com/FedeDP/${MY_PN}"
+	EGIT_BRANCH="master"
+	VCS_ECLASS="git-r3"
+else
+	SRC_URI="https://github.com/FedeDP/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	S="${WORKDIR}/${P^}"
+	KEYWORDS="~amd64 ~x86"
+fi
+
+inherit cmake xdg-utils ${VCS_ECLASS}
 
 DESCRIPTION="A C daemon that turns your webcam into a light sensor"
 HOMEPAGE="https://github.com/FedeDP/Clight"
-
-EGIT_REPO_URI="https://github.com/FedeDP/${MY_PN}"
-EGIT_BRANCH="master"
 
 LICENSE="GPL-3"
 SLOT="0"
