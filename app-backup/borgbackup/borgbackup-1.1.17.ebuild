@@ -27,6 +27,7 @@ RDEPEND="
 	app-arch/lz4
 	virtual/acl
 	dev-python/llfuse[${PYTHON_USEDEP}]
+	dev-python/packaging[${PYTHON_USEDEP}]
 	dev-libs/openssl:0=
 "
 
