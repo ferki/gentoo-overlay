@@ -16,10 +16,10 @@ IUSE=""
 S=${WORKDIR}/sof-bin-stable-v${PV}
 
 src_compile() {
-	sed -i -e '2i set -e' go.sh || die
+	sed -i -e '1i #!/bin/bash\nset -e' go.sh || die
 }
 
 src_install() {
-	mkdir -p "${D}/lib/firmware" || die
-	ROOT=${D} SOF_VERSION="v${PV}" ${S}/go.sh || die
+	mkdir -p "${D}/lib/firmware/intel" || die
+	SOF_VERSION=v${PV} ROOT=${D} ${S}/go.sh || die
 }
