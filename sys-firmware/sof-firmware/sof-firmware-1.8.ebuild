@@ -23,6 +23,7 @@ src_install() {
 	doins -r v${PV}.x/sof-tplg
 	doins -r v${PV}.x/sof-tplg-v${PV}
 
+	local binary
 	for binary in sof-ctl sof-logger sof-probes; do
 		dobin v${PV}.x/tools-v${PV}/${binary}
 	done
