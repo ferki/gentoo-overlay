@@ -12,7 +12,7 @@ SRC_URI="https://dl.suckless.org/st/${MY_P}.tar.gz"
 
 LICENSE="MIT-with-advertising"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ppc64 ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~riscv ~ppc64 ~x86"
 RESTRICT="test"
 
 DEPEND=">=sys-libs/ncurses-6.0:0="
