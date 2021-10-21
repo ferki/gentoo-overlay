@@ -3,8 +3,8 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{6,7,8,9} )
-DISTUTILS_USE_SETUPTOOLS=rdepend
+PYTHON_COMPAT=( python3_{8,9,10} )
+DISTUTILS_USE_SETUPTOOLS=pyproject.toml
 
 inherit distutils-r1
 
@@ -21,18 +21,20 @@ RESTRICT="!test? ( test )"
 DEPEND=""
 RDEPEND="
 	${PYTHON_DEPS}
-	dev-python/click[${PYTHON_USEDEP}]
+	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]
 	dev-python/future[${PYTHON_USEDEP}]
 	dev-python/six[${PYTHON_USEDEP}]
 "
 BDEPEND="
-	dev-python/setuptools[${PYTHON_USEDEP}]
 	test? (
-		dev-python/mock[${PYTHON_USEDEP}]
-		dev-python/nose[${PYTHON_USEDEP}]
 		dev-python/pytest[${PYTHON_USEDEP}]
 	)
 "
+
+src_prepare() {
+	sed -i '/^exclude/d' "${S}/pyproject.toml" || die 'Can not remove exclude'
+	eapply_user
+}
 
 python_test() {
 	local gentoo_tests_dir="${S}/gentoo_tests"
