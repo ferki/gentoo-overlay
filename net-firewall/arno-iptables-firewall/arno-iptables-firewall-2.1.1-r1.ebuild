@@ -92,7 +92,7 @@ src_install() {
 	if use rsyslog
 	then
 		insinto /etc/rsyslog.d
-		newins etc/rsyslog.d/"${PN}".conf 60-"${PN}".conf
+		newins etc/rsyslog.d/"${PN}".conf 20-"${PN}".conf
 	fi
 
 	doman share/man/man1/arno-fwfilter.1 \
