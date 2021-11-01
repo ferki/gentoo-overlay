@@ -1,4 +1,4 @@
-# Copyright 1999-2020 Gentoo Authors
+# Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -57,9 +57,11 @@ src_install() {
 	dosbin bin/"${PN}"
 
 	insinto /usr/libexec/"${PN}"
-	doins share/"${PN}"/aif-job-execute
-	doins share/"${PN}"/aif-job-processor
 	doins share/"${PN}"/environment
+
+	exeinto /usr/libexec/"${PN}"
+	doexe share/"${PN}"/aif-job-execute
+	doexe share/"${PN}"/aif-job-processor
 
 	insinto /etc/logrotate.d
 	doins etc/logrotate.d/"${PN}"
@@ -74,12 +76,12 @@ src_install() {
 
 		insinto /usr/libexec/"${PN}"/plugins
 		doins share/"${PN}"/plugins/*.plugin
+		doins share/"${PN}"/plugins/adaptive-ban-helper
+		doins share/"${PN}"/plugins/dyndns-host-open-helper
+		doins share/"${PN}"/plugins/parasitic-net-helper
+		doins share/"${PN}"/plugins/traffic-accounting-helper
 
 		exeinto /usr/libexec/"${PN}"/plugins
-		doexe share/"${PN}"/plugins/adaptive-ban-helper
-		doexe share/"${PN}"/plugins/dyndns-host-open-helper
-		doexe share/"${PN}"/plugins/parasitic-net-helper
-		doexe share/"${PN}"/plugins/traffic-accounting-helper
 		doexe share/"${PN}"/plugins/traffic-accounting-log-rotate
 		doexe share/"${PN}"/plugins/traffic-accounting-show
 
