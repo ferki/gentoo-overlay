@@ -5,8 +5,9 @@ EAPI=7
 
 PYTHON_COMPAT=( python3_{8,9} )
 PYTHON_REQ_USE="sqlite,ssl?"
-inherit distutils-r1 git-r3
 DISTUTILS_USE_SETUPTOOLS=no
+
+inherit distutils-r1 git-r3
 
 DESCRIPTION="Powerful IMAP/Maildir synchronization and reader support"
 HOMEPAGE="https://github.com/OfflineIMAP/offlineimap3"
