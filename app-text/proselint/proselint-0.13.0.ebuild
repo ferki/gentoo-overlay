@@ -1,7 +1,7 @@
 # Copyright 2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 PYTHON_COMPAT=( python3_{8,9,10} )
 DISTUTILS_USE_SETUPTOOLS=pyproject.toml
@@ -33,7 +33,7 @@ BDEPEND="
 
 src_prepare() {
 	sed -i '/^exclude/d' "${S}/pyproject.toml" || die 'Can not remove exclude'
-	eapply_user
+	default
 }
 
 python_test() {
