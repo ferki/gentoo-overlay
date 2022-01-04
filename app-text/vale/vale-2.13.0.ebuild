@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -105,8 +105,21 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
+IUSE="+styles"
 
 RESTRICT="test"
+
+RDEPEND="
+	styles? (
+		app-text/vale-style-alex
+		app-text/vale-style-Google
+		app-text/vale-style-Joblint
+		app-text/vale-style-Microsoft
+		app-text/vale-style-proselint
+		app-text/vale-style-Readability
+		app-text/vale-style-write-good
+	)
+"
 
 src_prepare() {
 	sed -i "s/\$(LAST_TAG)/v${PV}/" Makefile || die 'sed failed'

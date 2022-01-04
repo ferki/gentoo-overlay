@@ -5,4 +5,7 @@
 		<email>erkiferenc@gmail.com</email>
 		<name>Ferenc Erki</name>
 	</maintainer>
+	<use>
+		<flag name="styles">Install upstream's collection of style guides</flag>
+	</use>
 </pkgmetadata>
