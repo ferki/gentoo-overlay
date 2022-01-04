@@ -6,6 +6,8 @@
 		<name>Ferenc Erki</name>
 	</maintainer>
 	<use>
+		<flag name="asciidoc">Support AsciiDoc</flag>
+		<flag name="rst">Support reStructuredText</flag>
 		<flag name="styles">Install upstream's collection of style guides</flag>
 	</use>
 </pkgmetadata>

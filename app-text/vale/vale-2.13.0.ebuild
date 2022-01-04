@@ -105,11 +105,13 @@ SRC_URI="
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+styles"
+IUSE="asciidoc rst +styles xml"
 
 RESTRICT="test"
 
 RDEPEND="
+	asciidoc? ( dev-ruby/asciidoctor )
+	rst? ( dev-python/docutils )
 	styles? (
 		app-text/vale-style-alex
 		app-text/vale-style-Google
@@ -119,6 +121,7 @@ RDEPEND="
 		app-text/vale-style-Readability
 		app-text/vale-style-write-good
 	)
+	xml? ( dev-libs/libxslt )
 "
 
 src_prepare() {
