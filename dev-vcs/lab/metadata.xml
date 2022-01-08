@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>williamh@gentoo.org</email>
-		<name>William Hubbs</name>
+		<email>erkiferenc@gmail.com</email>
+		<name>Ferenc Erki</name>
 	</maintainer>
 	<longdescription>
 		Lab wraps Git or Hub, making it simple to clone, fork, and interact with repositories on GitLab,
