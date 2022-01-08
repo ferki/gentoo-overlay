@@ -7,12 +7,17 @@ inherit desktop savedconfig toolchain-funcs
 
 DESCRIPTION="Simple terminal implementation for X"
 HOMEPAGE="https://st.suckless.org/"
-SRC_URI="https://dl.suckless.org/st/${P}.tar.gz"
+
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://git.suckless.org/${PN}"
+else
+	SRC_URI="https://dl.suckless.org/${PN}/${P}.tar.gz"
+	KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ppc64 ~riscv ~x86"
+fi
 
 LICENSE="MIT-with-advertising"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ppc64 ~riscv ~x86"
-IUSE="savedconfig"
 
 RDEPEND="
 	>=sys-libs/ncurses-6.0:0=
