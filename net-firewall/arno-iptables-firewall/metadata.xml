@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-<maintainer type='person'>
-	<email>erkiferenc@gmail.com</email>
-	<name>Ferenc Erki</name>
-</maintainer>
-<use>
-	<flag name='plugins'>Install optional plugins</flag>
-	<flag name="rsyslog">Install configuration snippet for <pkg>app-admin/rsyslog</pkg></flag>
-</use>
+	<maintainer type='person'>
+		<email>erkiferenc@gmail.com</email>
+		<name>Ferenc Erki</name>
+	</maintainer>
+	<use>
+		<flag name='plugins'>Install optional plugins</flag>
+		<flag name="rsyslog">Install configuration snippet for <pkg>app-admin/rsyslog</pkg></flag>
+	</use>
 </pkgmetadata>
