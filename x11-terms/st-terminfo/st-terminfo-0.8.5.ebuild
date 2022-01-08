@@ -3,24 +3,27 @@
 
 EAPI=8
 
-MY_PN=${PN%-*}
-MY_P=${MY_PN}-${PV}
-
-DESCRIPTION="Terminfo for st"
+DESCRIPTION="Terminfo for x11-terms/st"
 HOMEPAGE="https://st.suckless.org/"
-SRC_URI="https://dl.suckless.org/st/${MY_P}.tar.gz"
+
+if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://git.suckless.org/st"
+else
+	SRC_URI="https://dl.suckless.org/st/st-${PV}.tar.gz"
+	S="${WORKDIR}/st-${PV}"
+	KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ppc64 ~riscv ~x86"
+fi
 
 LICENSE="MIT-with-advertising"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~arm64 ~hppa ~ppc64 ~riscv ~x86"
+
+BDEPEND=">=sys-libs/ncurses-6.0"
+
 RESTRICT="test"
 
-DEPEND=">=sys-libs/ncurses-6.0:0="
-
-S="${WORKDIR}/${MY_P}"
-
 src_prepare() {
-	mkdir terminfo || die "Failed to create terminfo directory"
+	mkdir -v terminfo || die "Failed to create terminfo directory"
 	default
 }
 
@@ -33,11 +36,11 @@ src_compile() {
 }
 
 src_install() {
-	insinto "/usr/share/${MY_PN}"
+	insinto "/usr/share/st"
 	doins -r terminfo
 
-	newenvd - "51${MY_PN}" <<-_EOF_
-		TERMINFO_DIRS="/usr/share/${MY_PN}/terminfo"
+	newenvd - "51${PN}" <<-_EOF_
+		TERMINFO_DIRS="/usr/share/st/terminfo"
 		COLON_SEPARATED="TERMINFO_DIRS"
 	_EOF_
 }
