@@ -26,6 +26,7 @@ IUSE="ddc dpms gamma screen yoctolight"
 
 DEPEND="
 	>=dev-libs/libmodule-5.0.0
+	sys-apps/dbus
 	sys-auth/polkit
 	virtual/jpeg
 	virtual/libudev
