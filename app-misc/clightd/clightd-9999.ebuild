@@ -30,7 +30,9 @@ DEPEND="
 	virtual/jpeg
 	virtual/libudev
 	|| ( sys-auth/elogind sys-apps/systemd )
-	ddc? ( >=app-misc/ddcutil-0.9.5 )
+	ddc? (
+		>=app-misc/ddcutil-0.9.5
+	)
 	dpms? (
 		dev-libs/wayland
 		x11-libs/libdrm
