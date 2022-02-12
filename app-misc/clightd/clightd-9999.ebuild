@@ -67,6 +67,7 @@ src_configure() {
 		-DENABLE_GAMMA=$(usex gamma)
 		-DENABLE_SCREEN=$(usex screen)
 		-DENABLE_YOCTOLIGHT=$(usex yoctolight)
+		-DMODULE_LOAD_DIR=/etc/modules-load.d
 	)
 
 	cmake_src_configure
