@@ -1,7 +1,7 @@
-# Copyright 2020-2021 Gentoo Authors
+# Copyright 2020-2022 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 MY_PN="${PN^}"
 
@@ -22,15 +22,18 @@ HOMEPAGE="https://github.com/FedeDP/Clightd"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="ddc dpms gamma screen yoctolight"
+IUSE="ddc dpms gamma pipewire screen yoctolight"
 
 DEPEND="
 	>=dev-libs/libmodule-5.0.0
+	sys-apps/dbus
 	sys-auth/polkit
 	virtual/jpeg
 	virtual/libudev
 	|| ( sys-auth/elogind sys-apps/systemd )
-	ddc? ( >=app-misc/ddcutil-0.9.5 )
+	ddc? (
+		>=app-misc/ddcutil-0.9.5
+	)
 	dpms? (
 		dev-libs/wayland
 		x11-libs/libdrm
@@ -42,6 +45,9 @@ DEPEND="
 		x11-libs/libdrm
 		x11-libs/libXrandr
 		x11-libs/libX11
+	)
+	pipewire? (
+		media-video/pipewire
 	)
 	screen? (
 		x11-libs/libX11
@@ -61,6 +67,7 @@ src_configure() {
 		-DENABLE_GAMMA=$(usex gamma)
 		-DENABLE_SCREEN=$(usex screen)
 		-DENABLE_YOCTOLIGHT=$(usex yoctolight)
+		-DMODULE_LOAD_DIR=/etc/modules-load.d
 	)
 
 	cmake_src_configure
