@@ -33,6 +33,8 @@ EGO_SUM=(
 	"github.com/jdkato/prose v1.2.1/go.mod"
 	"github.com/jdkato/regexp v0.1.0"
 	"github.com/jdkato/regexp v0.1.0/go.mod"
+	"github.com/jdkato/titlecase v0.0.0-20220120021253-0158ddd948b8"
+	"github.com/jdkato/titlecase v0.0.0-20220120021253-0158ddd948b8/go.mod"
 	"github.com/mattn/go-runewidth v0.0.7/go.mod"
 	"github.com/mattn/go-runewidth v0.0.13"
 	"github.com/mattn/go-runewidth v0.0.13/go.mod"
