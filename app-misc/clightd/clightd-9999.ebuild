@@ -22,7 +22,7 @@ HOMEPAGE="https://github.com/FedeDP/Clightd"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="ddc dpms gamma screen yoctolight"
+IUSE="ddc dpms gamma pipewire screen yoctolight"
 
 DEPEND="
 	>=dev-libs/libmodule-5.0.0
@@ -45,6 +45,9 @@ DEPEND="
 		x11-libs/libdrm
 		x11-libs/libXrandr
 		x11-libs/libX11
+	)
+	pipewire? (
+		media-video/pipewire
 	)
 	screen? (
 		x11-libs/libX11
