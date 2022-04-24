@@ -1,4 +1,4 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2022 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
@@ -14,9 +14,10 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 RDEPEND="
+	media-libs/libjpeg-turbo
 	media-libs/libpng:0=
 	sys-libs/zlib
-	virtual/jpeg:0"
+"
 DEPEND="${RDEPEND}"
 
 pkg_setup() {
