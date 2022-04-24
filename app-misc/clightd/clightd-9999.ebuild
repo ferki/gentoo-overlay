@@ -26,9 +26,9 @@ IUSE="ddc dpms gamma pipewire screen yoctolight"
 
 DEPEND="
 	>=dev-libs/libmodule-5.0.0
+	media-libs/libjpeg-turbo
 	sys-apps/dbus
 	sys-auth/polkit
-	virtual/jpeg
 	virtual/libudev
 	|| ( sys-auth/elogind sys-apps/systemd )
 	ddc? (
