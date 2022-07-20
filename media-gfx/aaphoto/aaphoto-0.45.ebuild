@@ -21,7 +21,5 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 pkg_setup() {
-	if [[ ${MERGE_TYPE} != binary ]]; then
-		tc-has-openmp || die "Please switch to an openmp compatible compiler"
-	fi
+	[[ ${MERGE_TYPE} != binary ]] && tc-check-openmp
 }
