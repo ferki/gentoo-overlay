@@ -20,6 +20,10 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
+pkg_pretend() {
+	[[ ${MERGE_TYPE} != binary ]] && tc-check-openmp
+}
+
 pkg_setup() {
 	[[ ${MERGE_TYPE} != binary ]] && tc-check-openmp
 }
