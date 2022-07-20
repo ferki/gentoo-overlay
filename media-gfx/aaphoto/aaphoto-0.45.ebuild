@@ -22,9 +22,6 @@ DEPEND="${RDEPEND}"
 
 pkg_setup() {
 	if [[ ${MERGE_TYPE} != binary ]]; then
-		[[ $(gcc-major-version) -lt 4 ]] || \
-		( [[ $(gcc-major-version) -eq 4 && $(gcc-minor-version) -lt 2 ]] ) \
-		&& die "Sorry, but gcc 4.2 or higher is required"
 		tc-has-openmp || die "Please switch to an openmp compatible compiler"
 	fi
 }
