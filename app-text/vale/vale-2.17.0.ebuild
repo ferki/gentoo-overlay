@@ -6,7 +6,7 @@ EAPI=8
 inherit go-module
 
 DESCRIPTION="A syntax-aware linter for prose built with speed and extensibility in mind"
-HOMEPAGE="https://docs.errata.ai/"
+HOMEPAGE="https://vale.sh/docs/"
 
 EGO_SUM=(
 	"github.com/MarvinJWendt/testza v0.1.0/go.mod"
