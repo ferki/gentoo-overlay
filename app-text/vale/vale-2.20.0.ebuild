@@ -68,6 +68,8 @@ EGO_SUM=(
 	"github.com/montanaflynn/stats v0.6.3/go.mod"
 	"github.com/neurosnap/sentences v1.0.6"
 	"github.com/neurosnap/sentences v1.0.6/go.mod"
+	"github.com/niklasfasching/go-org v1.6.5"
+	"github.com/niklasfasching/go-org v1.6.5/go.mod"
 	"github.com/nwaples/rardecode v1.1.0"
 	"github.com/nwaples/rardecode v1.1.0/go.mod"
 	"github.com/olekukonko/tablewriter v0.0.4"
