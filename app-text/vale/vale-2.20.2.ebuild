@@ -152,7 +152,7 @@ SRC_URI="
 	${EGO_SUM_SRC_URI}
 "
 
-LICENSE="Apache-2.0 BSD MIT"
+LICENSE="Apache-2.0 BSD BSD-2 MIT public-domain"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="asciidoc rst +styles xml"
