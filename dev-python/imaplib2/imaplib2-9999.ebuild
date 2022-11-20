@@ -4,7 +4,7 @@
 EAPI=7
 
 PYTHON_COMPAT=( python3_{8..11} )
-DISTUTILS_USE_SETUPTOOLS=bdepend
+DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 git-r3
 
 DESCRIPTION="Threaded Python IMAP4 client."
