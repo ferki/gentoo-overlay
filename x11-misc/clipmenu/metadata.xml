@@ -5,4 +5,7 @@
 		<email>erkiferenc@gmail.com</email>
 		<name>Ferenc Erki</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">cdown/clipmenu</remote-id>
+	</upstream>
 </pkgmetadata>
