@@ -5,6 +5,9 @@
 		<email>erkiferenc@gmail.com</email>
 		<name>Ferenc Erki</name>
 	</maintainer>
+	<upstream>
+		<remote-id type="github">FedeDP/Clightd</remote-id>
+	</upstream>
 	<use>
 		<flag name="ddc">Enable ddcutil support</flag>
 		<flag name="dpms">Enable DPMS support</flag>
