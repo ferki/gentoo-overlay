@@ -31,17 +31,11 @@ DEPEND="
 
 src_prepare() {
 	default
-	sed config.mk \
-		-e '/^CC/d' \
-		-e 's|/usr/local|/usr|g' \
-		-e 's|^CFLAGS.*|CFLAGS += -std=c99 -pedantic -Wall $(INCS) $(CPPFLAGS)|g' \
-		-e 's|^LDFLAGS.*|LDFLAGS += $(CFLAGS) $(LIBS)|g' \
-		-e 's|^INCS.*|INCS = -I. -I/usr/include -I/usr/include/freetype2|g' \
-		-e 's|^LIBS.*|LIBS = -lX11 -lfontconfig -lXft|g' \
-		-e 's|{|(|g;s|}|)|g' \
-		-i || die
 
 	sed Makefile \
+		-e 's|/usr/local|/usr|g' \
+		-e 's|/usr/X11R6|/usr|g' \
+		-e "s|^DOCPREFIX.*|DOCPREFIX = \${PREFIX}/share/doc/${P}|" \
 		-e 's|{|(|g;s|}|)|g' \
 		-e '/^[[:space:]]*@echo/d' \
 		-e 's|^	@|	|g' \
