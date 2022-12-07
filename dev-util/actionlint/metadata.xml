@@ -5,10 +5,6 @@
 		<email>erkiferenc@gmail.com</email>
 		<name>Ferenc Erki</name>
 	</maintainer>
-	<longdescription lang="en">
-	actionlint is a static checker for GitHub Actions workflow files with
-	Syntax check for workflow files, strong type check for expressions, etc.
-	</longdescription>
 	<upstream>
 		<remote-id type="github">rhysd/actionlint</remote-id>
 	</upstream>
