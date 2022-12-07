@@ -117,22 +117,21 @@ EGO_SUM=(
 	"github.com/xo/terminfo v0.0.0-20210125001918-ca9a967f8778/go.mod"
 	"github.com/yuin/goldmark v1.4.12"
 	"github.com/yuin/goldmark v1.4.12/go.mod"
-	"golang.org/x/net v0.0.0-20210226172049-e18ecbb05110"
-	"golang.org/x/net v0.0.0-20210226172049-e18ecbb05110/go.mod"
+	"golang.org/x/net v0.0.0-20211015210444-4f30a5c0130f"
+	"golang.org/x/net v0.0.0-20211015210444-4f30a5c0130f/go.mod"
 	"golang.org/x/sys v0.0.0-20201119102817-f84b799fce68/go.mod"
 	"golang.org/x/sys v0.0.0-20210330210617-4fbd30eecc44/go.mod"
 	"golang.org/x/sys v0.0.0-20210615035016-665e8c7367d1/go.mod"
-	"golang.org/x/sys v0.0.0-20211013075003-97ac67df715c"
 	"golang.org/x/sys v0.0.0-20211013075003-97ac67df715c/go.mod"
-	"golang.org/x/term v0.0.0-20201126162022-7de9c90e9dd1/go.mod"
+	"golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8"
+	"golang.org/x/sys v0.0.0-20220319134239-a9b59b0215f8/go.mod"
 	"golang.org/x/term v0.0.0-20210220032956-6a3ed077a48d/go.mod"
 	"golang.org/x/term v0.0.0-20210615171337-6886f2dfbf5b/go.mod"
 	"golang.org/x/term v0.0.0-20210927222741-03fcf44c2211"
 	"golang.org/x/term v0.0.0-20210927222741-03fcf44c2211/go.mod"
-	"golang.org/x/text v0.3.3/go.mod"
-	"golang.org/x/tools v0.0.0-20180917221912-90fa682c2a6e/go.mod"
-	"golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543"
 	"golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod"
+	"golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1"
+	"golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1/go.mod"
 	"gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod"
 	"gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127"
 	"gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127/go.mod"
@@ -147,6 +146,7 @@ EGO_SUM=(
 )
 
 go-module_set_globals
+
 SRC_URI="
 	https://github.com/errata-ai/vale/archive/v${PV}.tar.gz -> ${P}.tar.gz
 	${EGO_SUM_SRC_URI}
