@@ -61,13 +61,11 @@ RDEPEND="${DEPEND}"
 BDEPEND="${DEPEND}"
 
 src_configure() {
-	local mycmakeargs=(
-		-DENABLE_DDC=$(usex ddc)
-		-DENABLE_DPMS=$(usex dpms)
-		-DENABLE_GAMMA=$(usex gamma)
-		-DENABLE_SCREEN=$(usex screen)
-		-DENABLE_YOCTOLIGHT=$(usex yoctolight)
-	)
+	local mycmakeargs=() useflag
+
+	for useflag in ddc dpms gamma screen yoctolight; do
+		mycmakeargs+=( -DENABLE_${useflag^^}=$(usex $useflag) )
+	done
 
 	if use ddc; then
 		mycmakeargs+=( -DMODULE_LOAD_DIR=/etc/modules-load.d )
