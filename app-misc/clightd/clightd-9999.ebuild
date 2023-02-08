@@ -1,4 +1,4 @@
-# Copyright 2020-2022 Gentoo Authors
+# Copyright 2020-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -67,8 +67,11 @@ src_configure() {
 		-DENABLE_GAMMA=$(usex gamma)
 		-DENABLE_SCREEN=$(usex screen)
 		-DENABLE_YOCTOLIGHT=$(usex yoctolight)
-		-DMODULE_LOAD_DIR=/etc/modules-load.d
 	)
+
+	if use ddc; then
+		mycmakeargs+=( -DMODULE_LOAD_DIR=/etc/modules-load.d )
+	fi
 
 	cmake_src_configure
 }
