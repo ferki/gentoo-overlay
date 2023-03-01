@@ -14,6 +14,8 @@ EGO_SUM=(
 	"github.com/MarvinJWendt/testza v0.2.8/go.mod"
 	"github.com/MarvinJWendt/testza v0.2.10"
 	"github.com/MarvinJWendt/testza v0.2.10/go.mod"
+	"github.com/adrg/strutil v0.3.0"
+	"github.com/adrg/strutil v0.3.0/go.mod"
 	"github.com/antonmedv/expr v1.12.0"
 	"github.com/antonmedv/expr v1.12.0/go.mod"
 	"github.com/atomicgo/cursor v0.0.1"
