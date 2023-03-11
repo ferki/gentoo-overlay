@@ -1,15 +1,13 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 inherit readme.gentoo-r1 systemd
 
 DESCRIPTION="Arno's iptables firewall script"
 HOMEPAGE="https://rocky.eld.leidenuniv.nl https://github.com/arno-iptables-firewall/aif"
 
-MY_PV=$(ver_rs 3 -)
-MY_PV=${MY_PV/rc/RC}
-SRC_URI="https://github.com/${PN}/aif/archive/${MY_PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/${PN}/aif/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -23,7 +21,7 @@ RDEPEND="net-firewall/ipset
 	sys-apps/iproute2
 	plugins? ( net-dns/bind-tools )"
 
-S="${WORKDIR}/aif-${MY_PV}"
+S="${WORKDIR}/aif-${PV}"
 
 DISABLE_AUTOFORMATTING="yes"
 DOC_CONTENTS="You will need to configure /etc/${PN}/firewall.conf
