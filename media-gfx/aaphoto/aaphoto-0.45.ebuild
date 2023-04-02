@@ -27,7 +27,3 @@ S="${WORKDIR}/log69-${PN}-${GIT_COMMIT}"
 pkg_pretend() {
 	[[ ${MERGE_TYPE} != binary ]] && tc-check-openmp
 }
-
-pkg_setup() {
-	[[ ${MERGE_TYPE} != binary ]] && tc-check-openmp
-}
