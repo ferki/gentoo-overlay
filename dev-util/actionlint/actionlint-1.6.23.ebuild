@@ -57,7 +57,7 @@ IUSE="doc"
 RESTRICT="test"
 PROPERTIES="test_network"
 
-BDEPEND="doc? ( app-text/ronn )"
+BDEPEND="doc? ( app-text/ronn-ng )"
 
 DOCS=( {CHANGELOG,README}.md docs/{checks,config,usage}.md )
 
