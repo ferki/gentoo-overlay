@@ -1,13 +1,15 @@
-# Copyright 1999-2022 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit toolchain-funcs
 
+GIT_COMMIT="ebe21c4"
+
 DESCRIPTION="Automatic color correction and resizing of photos"
 HOMEPAGE="http://log69.com/aaphoto.html https://github.com/log69/aaphoto"
-SRC_URI="http://log69.com/downloads/${PN}_sources_${PV}.tar.gz"
+SRC_URI="https://github.com/log69/${PN}/tarball/${GIT_COMMIT} -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
@@ -19,6 +21,8 @@ RDEPEND="
 	sys-libs/zlib
 "
 DEPEND="${RDEPEND}"
+
+S="${WORKDIR}/log69-${PN}-${GIT_COMMIT}"
 
 pkg_pretend() {
 	[[ ${MERGE_TYPE} != binary ]] && tc-check-openmp
