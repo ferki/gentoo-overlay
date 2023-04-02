@@ -1,0 +1,24 @@
+From ad4fc3c04b9e25212d78c231e1507458dfea8909 Mon Sep 17 00:00:00 2001
+From: Andras Horvath <mail@log69.com>
+Date: Sun, 10 Jul 2016 12:55:14 +0200
+Subject: [PATCH] bug fix
+
+---
+ aaio.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/aaio.c b/aaio.c
+index ba488f6..47c4221 100644
+--- a/aaio.c
++++ b/aaio.c
+@@ -1616,7 +1616,6 @@ int BITMAP_WRITE_PNG(char *file_name)
+ /*	png_set_packing(png_ptr); */
+ 
+ 
+-        png_read_update_info(png_ptr, info_ptr);
+         rowbytes = png_get_rowbytes(png_ptr, info_ptr);
+ 
+ 	row_pointers = malloc(bitmap_height * sizeof (long));
+-- 
+2.39.2
+

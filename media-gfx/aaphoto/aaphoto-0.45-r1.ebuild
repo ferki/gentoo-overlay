@@ -22,6 +22,8 @@ RDEPEND="
 "
 DEPEND="${RDEPEND}"
 
+PATCHES=("${FILESDIR}/${P}-fix-segfault-with-libpng-1.6.patch")
+
 S="${WORKDIR}/log69-${PN}-${GIT_COMMIT}"
 
 pkg_pretend() {
