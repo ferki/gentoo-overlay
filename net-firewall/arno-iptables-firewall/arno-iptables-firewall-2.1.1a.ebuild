@@ -15,11 +15,13 @@ KEYWORDS="~amd64 ~x86"
 IUSE="+plugins rsyslog"
 
 DEPEND=""
-RDEPEND="net-firewall/ipset
+RDEPEND="
+	net-firewall/ipset
 	net-firewall/iptables
 	sys-apps/coreutils
 	sys-apps/iproute2
-	plugins? ( net-dns/bind-tools )"
+	plugins? ( net-dns/bind-tools )
+"
 
 S="${WORKDIR}/aif-${PV}"
 
