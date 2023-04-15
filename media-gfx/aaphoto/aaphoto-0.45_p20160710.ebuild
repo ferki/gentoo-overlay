@@ -5,7 +5,7 @@ EAPI=8
 
 inherit toolchain-funcs
 
-GIT_COMMIT="ebe21c4"
+GIT_COMMIT="ad4fc3c"
 
 DESCRIPTION="Automatic color correction and resizing of photos"
 HOMEPAGE="https://web.archive.org/web/20220728233436/http://log69.com/aaphoto_en.html https://github.com/log69/aaphoto"
@@ -22,8 +22,6 @@ RDEPEND="
 	sys-libs/zlib
 "
 DEPEND="${RDEPEND}"
-
-PATCHES=("${FILESDIR}/${P}-fix-segfault-with-libpng-1.6.patch")
 
 pkg_pretend() {
 	[[ ${MERGE_TYPE} != binary ]] && tc-check-openmp
