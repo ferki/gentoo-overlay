@@ -9,7 +9,7 @@ GIT_COMMIT="ebe21c4"
 
 DESCRIPTION="Automatic color correction and resizing of photos"
 HOMEPAGE="https://web.archive.org/web/20220728233436/http://log69.com/aaphoto_en.html https://github.com/log69/aaphoto"
-SRC_URI="https://github.com/log69/${PN}/tarball/${GIT_COMMIT} -> ${P}.tar.gz"
+SRC_URI="https://github.com/log69/${PN}/archive/${GIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
