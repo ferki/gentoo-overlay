@@ -17,9 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND="
-	media-libs/libjpeg-turbo
-	media-libs/libpng:0=
-	sys-libs/zlib
+	media-libs/libjpeg-turbo:=
+	media-libs/libpng:=
 "
 RDEPEND="${DEPEND}"
 
