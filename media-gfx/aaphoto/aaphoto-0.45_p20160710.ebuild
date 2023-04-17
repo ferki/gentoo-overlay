@@ -16,12 +16,12 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-RDEPEND="
+DEPEND="
 	media-libs/libjpeg-turbo
 	media-libs/libpng:0=
 	sys-libs/zlib
 "
-DEPEND="${RDEPEND}"
+RDEPEND="${DEPEND}"
 
 pkg_pretend() {
 	[[ ${MERGE_TYPE} != binary ]] && tc-check-openmp
