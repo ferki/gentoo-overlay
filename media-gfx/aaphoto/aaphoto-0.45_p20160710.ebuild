@@ -5,12 +5,12 @@ EAPI=8
 
 inherit toolchain-funcs
 
-GIT_COMMIT="ad4fc3c"
+GIT_COMMIT="ad4fc3c04b9e25212d78c231e1507458dfea8909"
 
 DESCRIPTION="Automatic color correction and resizing of photos"
 HOMEPAGE="https://web.archive.org/web/20220728233436/http://log69.com/aaphoto_en.html https://github.com/log69/aaphoto"
 SRC_URI="https://github.com/log69/${PN}/archive/${GIT_COMMIT}.tar.gz -> ${P}.tar.gz"
-S="${WORKDIR}/log69-${PN}-${GIT_COMMIT}"
+S="${WORKDIR}/${PN}-${GIT_COMMIT}"
 
 LICENSE="GPL-3"
 SLOT="0"
