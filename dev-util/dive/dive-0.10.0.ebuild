@@ -13,7 +13,7 @@ SRC_URI="
 	https://github.com/ferki/${PN}/releases/download/v${PV}-gentoo-deps/${P}-gentoo-deps.tar.xz
 "
 
-LICENSE="MIT"
+LICENSE="Apache-2.0 BSD BSD-2 MIT MPL-2.0 Unlicense"
 SLOT="0"
 KEYWORDS="~amd64"
 
