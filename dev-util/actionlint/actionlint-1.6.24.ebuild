@@ -5,45 +5,12 @@ EAPI=8
 
 inherit go-module
 
-EGO_SUM=(
-	"github.com/fatih/color v1.15.0"
-	"github.com/fatih/color v1.15.0/go.mod"
-	"github.com/google/go-cmp v0.5.6"
-	"github.com/google/go-cmp v0.5.6/go.mod"
-	"github.com/mattn/go-colorable v0.1.13"
-	"github.com/mattn/go-colorable v0.1.13/go.mod"
-	"github.com/mattn/go-isatty v0.0.16/go.mod"
-	"github.com/mattn/go-isatty v0.0.17/go.mod"
-	"github.com/mattn/go-isatty v0.0.18"
-	"github.com/mattn/go-isatty v0.0.18/go.mod"
-	"github.com/mattn/go-runewidth v0.0.14"
-	"github.com/mattn/go-runewidth v0.0.14/go.mod"
-	"github.com/rivo/uniseg v0.2.0/go.mod"
-	"github.com/rivo/uniseg v0.4.4"
-	"github.com/rivo/uniseg v0.4.4/go.mod"
-	"github.com/robfig/cron v1.2.0"
-	"github.com/robfig/cron v1.2.0/go.mod"
-	"github.com/yuin/goldmark v1.5.4"
-	"github.com/yuin/goldmark v1.5.4/go.mod"
-	"golang.org/x/sync v0.1.0"
-	"golang.org/x/sync v0.1.0/go.mod"
-	"golang.org/x/sys v0.0.0-20220811171246-fbc7d0a398ab/go.mod"
-	"golang.org/x/sys v0.6.0"
-	"golang.org/x/sys v0.6.0/go.mod"
-	"golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543"
-	"golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod"
-	"gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405"
-	"gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod"
-	"gopkg.in/yaml.v3 v3.0.1"
-	"gopkg.in/yaml.v3 v3.0.1/go.mod"
-)
-
-go-module_set_globals
-
 DESCRIPTION="Static checker for GitHub Actions workflow files"
 HOMEPAGE="https://github.com/rhysd/actionlint"
-SRC_URI="https://github.com/rhysd/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
-	${EGO_SUM_SRC_URI}"
+SRC_URI="
+	https://github.com/rhysd/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/ferki/${PN}/releases/download/v${PV}-gentoo-deps/${P}-gentoo-deps.tar.xz
+"
 
 LICENSE="MIT"
 SLOT="0"
