@@ -1,4 +1,0 @@
-StylesPath = /usr/share/vale/styles
-
-[*]
-BasedOnStyles = Vale, write-good

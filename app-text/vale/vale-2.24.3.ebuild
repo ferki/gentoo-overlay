@@ -36,14 +36,6 @@ src_compile() {
 }
 
 src_install() {
-	dodoc "${FILESDIR}/vale.ini.example"
 	dobin bin/vale
 	default_src_install
-}
-
-pkg_postinst() {
-	elog "Vale requires a configuration file. If you don't have one yet,"
-	elog "consider copying the example file into your home directory:"
-	elog ""
-	elog "    cp /usr/share/doc/${P}/vale.ini.example ~/.vale.ini"
 }
