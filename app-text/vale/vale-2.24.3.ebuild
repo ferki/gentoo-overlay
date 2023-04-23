@@ -16,22 +16,13 @@ SRC_URI="
 LICENSE="Apache-2.0 BSD BSD-2 MIT public-domain"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="asciidoc rst +styles xml"
+IUSE="asciidoc rst xml"
 
 RESTRICT="test"
 
 RDEPEND="
 	asciidoc? ( dev-ruby/asciidoctor )
 	rst? ( dev-python/docutils )
-	styles? (
-		app-text/vale-style-alex
-		app-text/vale-style-Google
-		app-text/vale-style-Joblint
-		app-text/vale-style-Microsoft
-		app-text/vale-style-proselint
-		app-text/vale-style-Readability
-		app-text/vale-style-write-good
-	)
 	xml? ( dev-libs/libxslt )
 "
 
