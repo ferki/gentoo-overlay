@@ -34,8 +34,3 @@ src_prepare() {
 src_compile() {
 	emake build os=linux
 }
-
-src_install() {
-	dobin bin/vale
-	default_src_install
-}
