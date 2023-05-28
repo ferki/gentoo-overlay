@@ -101,6 +101,7 @@ BDEPEND="
 		dev-perl/Test-Output
 		dev-perl/Test-UseAllModules
 		dev-perl/Test-Warnings
+		dev-vcs/git
 		virtual/perl-autodie
 		virtual/perl-Module-Load-Conditional
 	)
