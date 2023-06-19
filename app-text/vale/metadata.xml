@@ -8,8 +8,4 @@
 	<upstream>
 		<remote-id type="github">errata-ai/vale</remote-id>
 	</upstream>
-	<use>
-		<flag name="asciidoc">Support AsciiDoc</flag>
-		<flag name="rst">Support reStructuredText</flag>
-	</use>
 </pkgmetadata>
