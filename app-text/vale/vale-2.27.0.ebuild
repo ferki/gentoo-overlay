@@ -18,6 +18,11 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="asciidoc rst xml"
 
+# tests require:
+# - various ruby gems: see testdata/Gemfile
+# - packaged optional runtime dependencies: asciidoctor, rst2html, xsltproc
+# - unpackaged optional runtime dependency: dita (may be removed in a patch)
+# - network access: sync subcommand tests (may be removed in a patch)
 RESTRICT="test"
 
 RDEPEND="
