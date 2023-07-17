@@ -1,5 +1,5 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 438b1be..7c7d3bf 100644
+index 7301c5b..d32228a 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -111,17 +111,8 @@ add_executable(laminarc src/client.cpp src/version.cpp laminar.capnp.c++)

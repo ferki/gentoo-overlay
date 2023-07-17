@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 49216b6..64451fd 100644
+index ae86ce9..614f5b3 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -137,7 +137,7 @@ set(BASH_COMPLETIONS_DIR /usr/share/bash-completion/completions CACHE PATH "Path
+@@ -144,7 +144,7 @@ set(BASH_COMPLETIONS_DIR /usr/share/bash-completion/completions CACHE PATH "Path
  set(ZSH_COMPLETIONS_DIR /usr/share/zsh/site-functions CACHE PATH "Path to zsh completions directory")
  install(TARGETS laminard RUNTIME DESTINATION sbin)
  install(TARGETS laminarc RUNTIME DESTINATION bin)
@@ -12,15 +12,15 @@ index 49216b6..64451fd 100644
  install(FILES etc/laminarc-completion.zsh DESTINATION ${ZSH_COMPLETIONS_DIR} RENAME _laminarc)
  
 diff --git a/etc/laminar.service.in b/etc/laminar.service.in
-index c2ebd01..30b2320 100644
+index 21e0bc8..843786c 100644
 --- a/etc/laminar.service.in
 +++ b/etc/laminar.service.in
-@@ -4,7 +4,7 @@ After=network.target
+@@ -6,7 +6,7 @@ Documentation=https://laminar.ohwg.net/docs.html
  
  [Service]
  User=laminar
 -EnvironmentFile=-/etc/laminar.conf
 +EnvironmentFile=-/etc/conf.d/laminar.conf
- ExecStart=@CMAKE_INSTALL_PREFIX@/sbin/laminard
+ ExecStart=@CMAKE_INSTALL_PREFIX@/sbin/laminard -v
  
  [Install]

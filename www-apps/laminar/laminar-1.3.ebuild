@@ -10,7 +10,7 @@ CMAKE_IN_SOURCE_BUILD=1
 declare -A BUNDLED_VERSION_FOR
 BUNDLED_VERSION_FOR[vue.min]=2.6.12
 BUNDLED_VERSION_FOR[ansi_up]=4.0.4
-BUNDLED_VERSION_FOR[Chart.min]=2.7.2
+BUNDLED_VERSION_FOR[Chart.min]=3.9.1
 
 DESCRIPTION="Fast and lightweight Continuous Integration"
 HOMEPAGE="https://laminar.ohwg.net https://github.com/ohwgiles/laminar"
@@ -18,7 +18,7 @@ SRC_URI="
 	https://github.com/ohwgiles/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz
 	https://cdnjs.cloudflare.com/ajax/libs/vue/${BUNDLED_VERSION_FOR[vue.min]}/vue.min.js -> ${P}-vue.min-${BUNDLED_VERSION_FOR[vue.min]}.js
 	https://raw.githubusercontent.com/drudru/ansi_up/v${BUNDLED_VERSION_FOR[ansi_up]}/ansi_up.js -> ${P}-ansi_up-${BUNDLED_VERSION_FOR[ansi_up]}.js
-	https://cdnjs.cloudflare.com/ajax/libs/Chart.js/${BUNDLED_VERSION_FOR[Chart.min]}/Chart.min.js -> ${P}-Chart.min-${BUNDLED_VERSION_FOR[Chart.min]}.js
+	https://cdnjs.cloudflare.com/ajax/libs/Chart.js/${BUNDLED_VERSION_FOR[Chart.min]}/chart.min.js -> ${P}-Chart.min-${BUNDLED_VERSION_FOR[Chart.min]}.js
 "
 
 LICENSE="GPL-3 MIT"
