@@ -41,6 +41,7 @@ PATCHES=(
 	"${FILESDIR}/${P}-skip-js-download.patch"
 	"${FILESDIR}/${P}-gentoo-config-path.patch"
 	"${FILESDIR}/${P}-skip-manpage-compression.patch"
+	"${FILESDIR}/${P}-fix-cmake-warning.patch"
 )
 
 src_unpack() {
