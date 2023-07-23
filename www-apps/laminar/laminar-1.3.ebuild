@@ -26,16 +26,23 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="
-	acct-group/laminar
-	acct-user/laminar
-	dev-db/sqlite
-	dev-libs/boost
+COMMON_DEPS="
+	dev-db/sqlite:3
 	dev-libs/capnproto
+	sys-libs/zlib
+"
+
+DEPEND="
+	${COMMON_DEPS}
+	dev-libs/boost
 	dev-libs/rapidjson
 "
-RDEPEND="${DEPEND}"
-BDEPEND="${DEPEND}"
+
+RDEPEND="
+	${COMMON_DEPS}
+	acct-group/laminar
+	acct-user/laminar
+"
 
 PATCHES=(
 	"${FILESDIR}/${P}-skip-js-download.patch"
