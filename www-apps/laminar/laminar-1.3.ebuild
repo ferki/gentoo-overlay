@@ -5,6 +5,7 @@ EAPI=8
 
 inherit cmake
 
+CMAKE_BUILD_TYPE=Release
 CMAKE_IN_SOURCE_BUILD=1
 
 declare -A BUNDLED_VERSION_FOR
@@ -67,7 +68,6 @@ src_unpack() {
 
 src_configure() {
 	local mycmakeargs=(
-		-DCMAKE_BUILD_TYPE=Release
 		-DLAMINAR_VERSION=${PV}
 		-DBUILD_TESTS=$(usex test)
 	)
