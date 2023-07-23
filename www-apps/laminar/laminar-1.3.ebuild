@@ -24,7 +24,8 @@ SRC_URI="
 LICENSE="GPL-3 MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="test"
+RESTRICT="!test? ( test )"
 
 COMMON_DEPS="
 	dev-db/sqlite:3
@@ -36,6 +37,7 @@ DEPEND="
 	${COMMON_DEPS}
 	dev-libs/boost
 	dev-libs/rapidjson
+	test? ( dev-cpp/gtest )
 "
 
 RDEPEND="
@@ -67,9 +69,14 @@ src_configure() {
 	local mycmakeargs=(
 		-DCMAKE_BUILD_TYPE=Release
 		-DLAMINAR_VERSION=${PV}
+		-DBUILD_TESTS=$(usex test)
 	)
 
 	cmake_src_configure
+}
+
+src_test() {
+	./laminar-tests || die
 }
 
 src_install() {
