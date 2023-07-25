@@ -49,7 +49,6 @@ RDEPEND="
 
 PATCHES=(
 	"${FILESDIR}/${P}-skip-js-download.patch"
-	"${FILESDIR}/${P}-use-openrc-config-path.patch"
 	"${FILESDIR}/${P}-skip-manpage-compression.patch"
 	"${FILESDIR}/${P}-fix-cmake-warning.patch"
 )
@@ -81,6 +80,8 @@ src_test() {
 
 src_install() {
 	newinitd "${FILESDIR}/laminar.initd" laminar
+
+	dosym -r /etc/laminar.conf /etc/conf.d/laminar
 
 	cmake_src_install
 }
