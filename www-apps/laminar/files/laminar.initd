@@ -1,5 +1,5 @@
 #!/sbin/openrc-run
-# Copyright 2020 Gentoo Authors
+# Copyright 2020-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 name="Laminar daemon"
@@ -17,9 +17,14 @@ start_pre() {
 	local env
 	local env_args
 
+	OIFS=$IFS
+	IFS=$'\n'
+
 	for env in $(set | grep ^LAMINAR_); do
 		env_args="${env_args} --env ${env}"
 	done
+
+	IFS=$OIFS
 
 	start_stop_daemon_args="${start_stop_daemon_args} ${env_args}"
 }
