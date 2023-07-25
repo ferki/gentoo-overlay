@@ -56,12 +56,12 @@ PATCHES=(
 src_unpack() {
 	unpack "${P}.tar.gz"
 
-	mkdir "${S}/js"
+	mkdir "${S}/js" || die
 
 	local dep
 
 	for dep in vue.min ansi_up Chart.min; do
-		cp "${DISTDIR}/${P}-${dep}-${BUNDLED_VERSION_FOR[$dep]}.js" "${S}/js/${dep}.js"
+		cp "${DISTDIR}/${P}-${dep}-${BUNDLED_VERSION_FOR[$dep]}.js" "${S}/js/${dep}.js" || die
 	done
 }
 
