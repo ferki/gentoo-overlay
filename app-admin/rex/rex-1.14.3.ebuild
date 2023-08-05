@@ -48,6 +48,7 @@ RDEPEND="
 		dev-perl/Expect
 		dev-perl/IPC-Shareable
 		dev-perl/XML-LibXML
+		net-misc/rsync
 	)
 	virtual/perl-Carp
 	virtual/perl-Data-Dumper
@@ -92,7 +93,8 @@ BDEPEND="
 	virtual/perl-Module-Metadata
 	test? (
 		!minimal? (
-			dev-perl/File-LibMagic
+			|| ( dev-perl/File-LibMagic sys-apps/file )
+			dev-vcs/git
 		)
 		virtual/perl-File-Temp
 		dev-perl/Sub-Override
@@ -101,7 +103,6 @@ BDEPEND="
 		dev-perl/Test-Output
 		dev-perl/Test-UseAllModules
 		dev-perl/Test-Warnings
-		dev-vcs/git
 		virtual/perl-autodie
 		virtual/perl-Module-Load-Conditional
 	)
