@@ -36,12 +36,14 @@ DEPEND="
 	)
 	dpms? (
 		dev-libs/wayland
+		dev-util/wayland-scanner
 		x11-libs/libdrm
 		x11-libs/libXext
 		x11-libs/libX11
 	)
 	gamma? (
 		dev-libs/wayland
+		dev-util/wayland-scanner
 		x11-libs/libdrm
 		x11-libs/libXrandr
 		x11-libs/libX11
@@ -50,6 +52,8 @@ DEPEND="
 		media-video/pipewire
 	)
 	screen? (
+		dev-libs/wayland
+		dev-util/wayland-scanner
 		x11-libs/libX11
 	)
 	yoctolight? (
