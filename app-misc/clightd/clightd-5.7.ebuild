@@ -25,14 +25,14 @@ SLOT="0"
 IUSE="ddc dpms gamma pipewire screen yoctolight"
 
 DEPEND="
-	>=dev-libs/libmodule-5.0.0
+	dev-libs/libmodule
 	media-libs/libjpeg-turbo
 	sys-apps/dbus
 	sys-auth/polkit
 	virtual/libudev
 	|| ( sys-auth/elogind sys-apps/systemd )
 	ddc? (
-		>=app-misc/ddcutil-0.9.5
+		app-misc/ddcutil
 	)
 	dpms? (
 		dev-libs/wayland
