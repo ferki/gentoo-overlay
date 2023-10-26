@@ -64,6 +64,10 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND="${DEPEND}"
 
+PATCHES=(
+	"${FILESDIR}/clightd-version.patch"
+)
+
 src_configure() {
 	local mycmakeargs=() useflag
 
