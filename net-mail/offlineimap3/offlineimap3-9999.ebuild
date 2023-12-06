@@ -1,9 +1,9 @@
 # Copyright 2021-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-PYTHON_COMPAT=( python3_{9..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 PYTHON_REQ_USE="sqlite,ssl?"
 DISTUTILS_USE_PEP517=setuptools
 
@@ -17,16 +17,18 @@ LICENSE="GPL-2+"
 SLOT="0"
 IUSE="doc kerberos ssl"
 
-DEPEND="doc? ( app-text/asciidoc )"
-RDEPEND="
+DEPEND="
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/distro[${PYTHON_USEDEP}]
 	>=dev-python/imaplib2-2.57[${PYTHON_USEDEP}]
+	dev-python/keyring[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/rfc6555[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.25.9[${PYTHON_USEDEP}]
+	doc? ( app-text/asciidoc )
 	kerberos? ( dev-python/gssapi[${PYTHON_USEDEP}] )
 "
+RDEPEND="${DEPEND}"
 BDEPEND="
 	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 "
