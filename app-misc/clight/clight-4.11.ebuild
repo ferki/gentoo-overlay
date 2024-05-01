@@ -51,6 +51,14 @@ BDEPEND="
 	bash-completion? ( app-shells/bash-completion )
 "
 
+src_configure() {
+	local mycmakeargs=(
+		-DCMAKE_INSTALL_SYSCONFDIR="${EPREFIX}/etc"
+	)
+
+	cmake_src_configure
+}
+
 pkg_postinst() {
 	xdg_icon_cache_update
 }
