@@ -1,4 +1,4 @@
-# Copyright 2020-2022 Gentoo Authors
+# Copyright 2020-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -45,7 +45,6 @@ RDEPEND="
 BDEPEND="
 	${DEPEND}
 	>=dev-libs/libmodule-5.0.0
-	dev-util/cmake
 	sys-apps/dbus
 	virtual/pkgconfig
 	bash-completion? ( app-shells/bash-completion )
