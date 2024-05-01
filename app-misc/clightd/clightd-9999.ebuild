@@ -1,4 +1,4 @@
-# Copyright 2020-2023 Gentoo Authors
+# Copyright 2020-2024 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -27,6 +27,7 @@ IUSE="ddc dpms gamma pipewire screen yoctolight"
 DEPEND="
 	dev-libs/libmodule
 	media-libs/libjpeg-turbo
+	net-libs/libiio
 	sys-apps/dbus
 	sys-auth/polkit
 	virtual/libudev
