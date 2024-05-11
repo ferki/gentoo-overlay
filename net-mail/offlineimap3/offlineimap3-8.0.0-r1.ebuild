@@ -37,6 +37,7 @@ PATCHES=( "${FILESDIR}/${P}-sqlite-threadsafety.patch" )
 
 src_prepare() {
 	sed -i "/^__version__/ s/\"\(.*\)\"/\"${PV}\"/" offlineimap/__init__.py
+	sed -i "s/^description-file/description_file/" setup.cfg
 	mv test/credentials.conf.sample test/credentials.conf
 	rm test/tests/test_01_basic.py
 	distutils-r1_src_prepare
