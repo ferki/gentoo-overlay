@@ -22,6 +22,7 @@ RDEPEND="
 	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/distro[${PYTHON_USEDEP}]
 	>=dev-python/imaplib2-2.57[${PYTHON_USEDEP}]
+	dev-python/keyring[${PYTHON_USEDEP}]
 	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/rfc6555[${PYTHON_USEDEP}]
 	>=dev-python/urllib3-1.25.9[${PYTHON_USEDEP}]
