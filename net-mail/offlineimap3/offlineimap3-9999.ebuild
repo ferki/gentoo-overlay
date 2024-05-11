@@ -19,13 +19,10 @@ IUSE="doc kerberos ssl"
 
 DEPEND="doc? ( app-text/asciidoc )"
 RDEPEND="
-	dev-python/certifi[${PYTHON_USEDEP}]
 	dev-python/distro[${PYTHON_USEDEP}]
 	>=dev-python/imaplib2-2.57[${PYTHON_USEDEP}]
 	dev-python/keyring[${PYTHON_USEDEP}]
-	dev-python/pyyaml[${PYTHON_USEDEP}]
 	dev-python/rfc6555[${PYTHON_USEDEP}]
-	>=dev-python/urllib3-1.25.9[${PYTHON_USEDEP}]
 	kerberos? ( dev-python/gssapi[${PYTHON_USEDEP}] )
 "
 BDEPEND="
