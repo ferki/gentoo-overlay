@@ -26,7 +26,6 @@ IUSE="bash-completion geoclue upower"
 
 PATCHES=(
 	"${FILESDIR}/clight-gentoo-skip-manpage-compression.patch"
-	"${FILESDIR}/clight-version.patch"
 )
 
 DEPEND="
