@@ -25,7 +25,6 @@ SLOT="0"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
-DEPEND=""
 RDEPEND="
 	${PYTHON_DEPS}
 	>=dev-python/click-8.0.0[${PYTHON_USEDEP}]

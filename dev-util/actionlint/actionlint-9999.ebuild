@@ -9,11 +9,9 @@ inherit git-r3 go-module
 
 DESCRIPTION="Static checker for GitHub Actions workflow files"
 HOMEPAGE="https://github.com/rhysd/actionlint"
-SRC_URI=""
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS=""
 IUSE="doc"
 RESTRICT="test"
 PROPERTIES="test_network"

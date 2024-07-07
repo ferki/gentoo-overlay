@@ -14,7 +14,6 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="+plugins rsyslog"
 
-DEPEND=""
 RDEPEND="
 	net-firewall/ipset
 	net-firewall/iptables
