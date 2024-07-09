@@ -9,6 +9,8 @@ DESCRIPTION="A CLI-based TODO list manager"
 HOMEPAGE="http://todotxt.org"
 SRC_URI="https://github.com/todotxt/${PN}.txt-cli/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
+S="${WORKDIR}/${PN}.txt-cli-${PV}"
+
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -18,8 +20,6 @@ RESTRICT="!test? ( test )"
 RDEPEND="app-shells/bash"
 
 DOCS=( README.md LICENSE todo.cfg )
-
-S="${WORKDIR}/${PN}.txt-cli-${PV}"
 
 src_prepare() {
 	default
