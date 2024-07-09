@@ -18,7 +18,7 @@ fi
 inherit distutils-r1
 
 DESCRIPTION="A linter for prose"
-HOMEPAGE="http://proselint.com"
+HOMEPAGE="https://github.com/amperser/proselint"
 
 LICENSE="BSD"
 SLOT="0"
