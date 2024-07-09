@@ -10,6 +10,8 @@ HOMEPAGE="https://rocky.eld.leidenuniv.nl https://github.com/arno-iptables-firew
 
 SRC_URI="https://github.com/${PN}/aif/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
+S="${WORKDIR}/aif-${PV}"
+
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -22,8 +24,6 @@ RDEPEND="
 	sys-apps/iproute2
 	plugins? ( net-dns/bind-tools )
 "
-
-S="${WORKDIR}/aif-${PV}"
 
 DISABLE_AUTOFORMATTING="yes"
 DOC_CONTENTS="You will need to configure /etc/${PN}/firewall.conf
