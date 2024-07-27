@@ -8,4 +8,9 @@
 	<upstream>
 		<remote-id type="github">cdown/clipmenu</remote-id>
 	</upstream>
+	<use>
+		<flag name="dmenu">Use dmenu as default launcher</flag>
+		<flag name="rofi">Use rofi as default launcher</flag>
+		<flag name="fzf">Use fzf as default launcher</flag>
+	</use>
 </pkgmetadata>
