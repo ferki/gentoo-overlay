@@ -49,7 +49,15 @@ src_install() {
 }
 
 pkg_postinst() {
+	if systemd_is_booted || has_version sys-apps/systemd; then
+		einfo "Make sure to import \$DISPLAY when using the systemd unit for clipmenud."
+		einfo "For example include the following in ~/.xinitrc before clipmenud:"
+		einfo ""
+		einfo "systemctl --user import-environment DISPLAY"
+	fi
+
 	if ! use dmenu && ! use fzf && ! use rofi ; then
+		ewarn ""
 		ewarn "Clipmenu has been installed without a launcher."
 		ewarn "You will need to set \$CM_LAUNCHER to a dmenu-compatible app for clipmenu to work."
 		ewarn "Please refer to the documents for more info."
