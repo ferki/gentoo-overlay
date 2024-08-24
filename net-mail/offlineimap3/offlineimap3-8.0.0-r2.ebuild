@@ -18,13 +18,14 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc kerberos ssl"
 
-RDEPEND="
-	kerberos? ( dev-python/gssapi[${PYTHON_USEDEP}] )
-"
-BDEPEND="
+DEPEND="
 	dev-python/distro[${PYTHON_USEDEP}]
 	>=dev-python/imaplib2-3.5[${PYTHON_USEDEP}]
 	dev-python/rfc6555[${PYTHON_USEDEP}]
+	kerberos? ( dev-python/gssapi[${PYTHON_USEDEP}] )
+"
+RDEPEND="${DEPEND}"
+BDEPEND="
 	doc? ( app-text/asciidoc )
 	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
 "
