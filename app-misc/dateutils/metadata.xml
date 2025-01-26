@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+    <!-- maintainer-needed -->
+    <upstream>
+        <maintainer>
+            <name>Sebastian Freundt</name>
+            <email>devel@fresse.org</email>
+        </maintainer>
+        <changelog>https://www.fresse.org/dateutils/changelog.html</changelog>
+        <doc>https://www.fresse.org/dateutils/#examples</doc>
+        <remote-id type="github">hroptatyr/dateutils</remote-id>
+        <remote-id type="bitbucket">hroptatyr/dateutils</remote-id>
+    </upstream>
+</pkgmetadata>
