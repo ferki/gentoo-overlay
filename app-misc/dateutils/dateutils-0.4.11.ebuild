@@ -19,12 +19,7 @@ esac
 LICENSE="BSD"
 SLOT="0"
 
-BDEPEND="app-arch/xz-utils"
 DEPEND="sys-libs/timezone-data"
-
-# bug 429810
-RDEPEND="${DEPEND}
-	!sys-fabric/dapl"
 
 src_prepare() {
 	default
