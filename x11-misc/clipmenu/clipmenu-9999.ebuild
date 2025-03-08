@@ -12,8 +12,9 @@ EGIT_BRANCH="develop"
 
 LICENSE="MIT"
 SLOT="0"
-IUSE="+dmenu fzf rofi"
+IUSE="+dmenu fzf rofi test"
 REQUIRED_USE="?? ( dmenu fzf rofi )"
+RESTRICT="!test? ( test )"
 
 DEPEND="
 	x11-libs/libX11
@@ -39,12 +40,20 @@ src_prepare() {
 
 src_compile() {
 	emake CFLAGS="${CFLAGS}"
+	use test && emake CFLAGS="${CFLAGS}" tests/test_store
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="${EPREFIX}"/usr install
+	emake install DESTDIR="${D}" PREFIX="${EPREFIX}"/usr \
+		systemd_user_dir="${D}/$(systemd_get_userunitdir)"
 
 	einstalldocs
+}
+
+src_test() {
+	# NOTE(NRK): the "x_integration_tests" are not enabled as they would
+	# require additional setup and dependencies
+	emake tests
 }
 
 pkg_postinst() {
