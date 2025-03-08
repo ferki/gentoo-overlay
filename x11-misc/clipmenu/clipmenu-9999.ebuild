@@ -16,10 +16,8 @@ IUSE="+dmenu fzf rofi"
 REQUIRED_USE="?? ( dmenu fzf rofi )"
 
 DEPEND="
-	x11-base/xorg-server[xvfb]
 	x11-libs/libX11
 	x11-libs/libXfixes
-	x11-misc/xsel
 "
 
 RDEPEND="
