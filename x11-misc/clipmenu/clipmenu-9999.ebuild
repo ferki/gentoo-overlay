@@ -37,6 +37,10 @@ src_prepare() {
 	fi
 }
 
+src_compile() {
+	emake CFLAGS="${CFLAGS}"
+}
+
 src_install() {
 	emake DESTDIR="${D}" PREFIX="${EPREFIX}"/usr install
 
