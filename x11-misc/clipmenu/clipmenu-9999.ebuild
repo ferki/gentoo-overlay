@@ -42,7 +42,8 @@ src_compile() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" PREFIX="${EPREFIX}"/usr install
+	emake install DESTDIR="${D}" PREFIX="${EPREFIX}"/usr \
+		systemd_user_dir="${D}/$(systemd_get_userunitdir)"
 
 	einstalldocs
 }
