@@ -1,4 +1,4 @@
-# Copyright 2021-2024 Gentoo Authors
+# Copyright 2021-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -35,7 +35,6 @@ distutils_enable_tests pytest
 
 src_prepare() {
 	sed -i "/^__version__/ s/\"\(.*\)\"/\"${PV}\"/" offlineimap/__init__.py
-	sed -i "s/^description-file/description_file/" setup.cfg
 	mv test/credentials.conf.sample test/credentials.conf
 	rm test/tests/test_01_basic.py
 	distutils-r1_src_prepare
