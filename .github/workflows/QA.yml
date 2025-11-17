@@ -6,15 +6,6 @@ on:
   push:
   pull_request:
 jobs:
-  repoman:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-      - name: Run repoman
-        uses: ferki/repoman-ebuild-qa-action@ferki
-        with:
-          portage_version: 3.0.30
   pkgcheck:
     runs-on: ubuntu-latest
     steps:
