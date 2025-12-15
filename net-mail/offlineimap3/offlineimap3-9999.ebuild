@@ -13,7 +13,7 @@ if [[ ${PV} == 9999 ]]; then
 	VCS_ECLASS="git-r3"
 else
 	SRC_URI="https://github.com/OfflineIMAP/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="~amd64"
 fi
 
 inherit distutils-r1 ${VCS_ECLASS}
