@@ -7,11 +7,19 @@ PYTHON_COMPAT=( python3_{8..13} )
 PYTHON_REQ_USE="sqlite,ssl?"
 DISTUTILS_USE_PEP517=setuptools
 
-inherit distutils-r1 git-r3
+if [[ ${PV} == 9999 ]]; then
+	EGIT_REPO_URI="https://github.com/OfflineIMAP/${PN}.git"
+	EGIT_BRANCH="master"
+	VCS_ECLASS="git-r3"
+else
+	SRC_URI="https://github.com/OfflineIMAP/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64 ~x86"
+fi
+
+inherit distutils-r1 ${VCS_ECLASS}
 
 DESCRIPTION="Powerful IMAP/Maildir synchronization and reader support"
 HOMEPAGE="https://github.com/OfflineIMAP/offlineimap3"
-EGIT_REPO_URI="https://github.com/OfflineIMAP/${PN}.git"
 
 LICENSE="GPL-2+"
 SLOT="0"
