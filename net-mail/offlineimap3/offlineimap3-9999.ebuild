@@ -15,15 +15,15 @@ EGIT_REPO_URI="https://github.com/OfflineIMAP/${PN}.git"
 
 LICENSE="GPL-2+"
 SLOT="0"
-IUSE="doc kerberos ssl"
+IUSE="doc kerberos keyring ssl"
 RESTRICT="!test? ( test )"
 
 DEPEND="
 	dev-python/distro[${PYTHON_USEDEP}]
 	>=dev-python/imaplib2-2.57[${PYTHON_USEDEP}]
-	dev-python/keyring[${PYTHON_USEDEP}]
 	dev-python/rfc6555[${PYTHON_USEDEP}]
 	kerberos? ( dev-python/gssapi[${PYTHON_USEDEP}] )
+	keyring? ( dev-python/keyring[${PYTHON_USEDEP}] )
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
