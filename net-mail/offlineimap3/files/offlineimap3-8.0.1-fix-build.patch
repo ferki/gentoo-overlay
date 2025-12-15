@@ -1,0 +1,42 @@
+diff --git c/pyproject.toml w/pyproject.toml
+index 9fefd55..9670eb2 100644
+--- c/pyproject.toml
++++ w/pyproject.toml
+@@ -11,7 +11,7 @@ description = "IMAP synchronization tool"
+ authors = [
+     { name = "John Goerzen & contributors", email = "jgoerzen@complete.org" }
+ ]
+-license = { text = "GPL-2.0" }
++license = "GPL-2.0-or-later"
+ readme = "README.md"
+ keywords = ["client", "imap", "cli", "email", "mail", "synchronization", "sync", "offline"]
+ requires-python = ">=3.6"
+@@ -19,7 +19,6 @@ requires-python = ">=3.6"
+ classifiers = [
+     "Development Status :: 5 - Production/Stable",
+     "Environment :: Console",
+-    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+     "Operating System :: POSIX",
+     "Programming Language :: Python :: 3",
+     "Programming Language :: Python :: 3.6",
+diff --git c/setup.py w/setup.py
+index 9bf3be1..74e1370 100644
+--- c/setup.py
++++ w/setup.py
+@@ -81,16 +81,6 @@ setup(name="offlineimap",
+       packages=['offlineimap', 'offlineimap.folder',
+                 'offlineimap.repository', 'offlineimap.ui',
+                 'offlineimap.utils'],
+-      scripts=['bin/offlineimap'],
+       setup_requires=['setuptools>=18.5', 'wheel', 'imaplib2'],
+-      license=copyright + ", Licensed under the GPL version 2",
+-      install_requires=['distro',
+-                        'imaplib2>=3.5',
+-                        'rfc6555',
+-                        'urllib3~=1.25.9'],
+-      extras_require={'kerberos':'gssapi[kerberos]',
+-                      'keyring':'keyring[keyring]',
+-                      'cygwin':'portalocker[cygwin]',
+-                      'testinternet':'certifi~=2020.6.20'}
+       )
+ 

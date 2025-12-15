@@ -33,6 +33,8 @@ BDEPEND="
 
 distutils_enable_tests pytest
 
+PATCHES="${FILESDIR}/${PN}-8.0.1-fix-build.patch"
+
 src_prepare() {
 	sed -i "/^__version__/ s/\"\(.*\)\"/\"${PV}\"/" offlineimap/__init__.py
 	mv test/credentials.conf.sample test/credentials.conf
