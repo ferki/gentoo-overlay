@@ -39,9 +39,9 @@ distutils_enable_tests pytest
 PATCHES="${FILESDIR}/${PN}-8.0.1-fix-build.patch"
 
 src_prepare() {
-	sed -i "/^__version__/ s/\"\(.*\)\"/\"${PV}\"/" offlineimap/__init__.py
-	mv test/credentials.conf.sample test/credentials.conf
-	rm test/tests/test_01_basic.py
+	sed -i "/^__version__/ s/\"\(.*\)\"/\"${PV}\"/" offlineimap/__init__.py || die "Can not set version"
+	mv test/credentials.conf.sample test/credentials.conf || die "Can not rename test credentials"
+	rm test/tests/test_01_basic.py || die "Can not remove network tests"
 	distutils-r1_src_prepare
 }
 
