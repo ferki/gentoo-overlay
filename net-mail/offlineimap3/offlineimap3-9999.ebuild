@@ -20,7 +20,7 @@ RESTRICT="!test? ( test )"
 
 DEPEND="
 	dev-python/distro[${PYTHON_USEDEP}]
-	>=dev-python/imaplib2-2.57[${PYTHON_USEDEP}]
+	>=dev-python/imaplib2-3.5[${PYTHON_USEDEP}]
 	dev-python/rfc6555[${PYTHON_USEDEP}]
 	kerberos? ( dev-python/gssapi[${PYTHON_USEDEP}] )
 	keyring? ( dev-python/keyring[${PYTHON_USEDEP}] )
@@ -28,7 +28,10 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND="
 	doc? ( app-text/asciidoc )
-	test? ( dev-python/pytest-cov[${PYTHON_USEDEP}] )
+	test? (
+		${RDEPEND}
+		dev-python/pytest-cov[${PYTHON_USEDEP}]
+	)
 "
 
 distutils_enable_tests pytest
