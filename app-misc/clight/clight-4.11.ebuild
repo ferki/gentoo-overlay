@@ -1,4 +1,4 @@
-# Copyright 2020-2024 Gentoo Authors
+# Copyright 2020-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -6,16 +6,15 @@ EAPI=8
 MY_PN="${PN^}"
 
 if [[ ${PV} == 9999 ]]; then
+	inherit git-r3
 	EGIT_REPO_URI="https://github.com/FedeDP/${MY_PN}"
-	EGIT_BRANCH="master"
-	VCS_ECLASS="git-r3"
 else
 	SRC_URI="https://github.com/FedeDP/${MY_PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 	S="${WORKDIR}/${P^}"
 	KEYWORDS="~amd64 ~x86"
 fi
 
-inherit cmake xdg-utils ${VCS_ECLASS}
+inherit cmake xdg
 
 DESCRIPTION="A C daemon that turns your webcam into a light sensor"
 HOMEPAGE="https://github.com/FedeDP/Clight"
@@ -26,7 +25,6 @@ IUSE="bash-completion geoclue upower"
 
 PATCHES=(
 	"${FILESDIR}/clight-gentoo-skip-manpage-compression.patch"
-	"${FILESDIR}/clight-version.patch"
 )
 
 DEPEND="
@@ -57,12 +55,4 @@ src_configure() {
 	)
 
 	cmake_src_configure
-}
-
-pkg_postinst() {
-	xdg_icon_cache_update
-}
-
-pkg_postrm() {
-	xdg_icon_cache_update
 }
