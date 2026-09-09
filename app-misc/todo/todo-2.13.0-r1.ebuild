@@ -19,7 +19,7 @@ RESTRICT="!test? ( test )"
 
 RDEPEND="app-shells/bash"
 
-DOCS=( README.md LICENSE todo.cfg )
+DOCS=( README.md LICENSE )
 
 src_prepare() {
 	default
@@ -33,8 +33,7 @@ src_prepare() {
 }
 
 src_install() {
-	dobin "${PN}.sh"
-	newbashcomp "${PN}_completion" "${PN}.sh"
+	emake DESTDIR="${D}" prefix="${EPREFIX}/usr" CONFIG_DIR="${EPREFIX}/etc" BASH_COMPLETION="$(get_bashcompdir)" install
 	einstalldocs
 }
 
