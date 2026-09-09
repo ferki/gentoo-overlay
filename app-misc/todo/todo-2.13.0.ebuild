@@ -1,4 +1,4 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -39,26 +39,10 @@ src_install() {
 }
 
 pkg_postinst() {
-	einfo
-	einfo 'Before starting todo, make sure to create'
-	einfo 'a .todo directory in your home directory:'
-	einfo '  $ mkdir -p $HOME/.todo'
-	einfo
-	einfo 'and make sure to copy the default todo'
-	einfo 'configuration file in the same location:'
-	einfo "  $ bzcat /usr/share/doc/${PF}/todo.cfg.bz2 > \$HOME/.todo/config"
-	einfo
-	einfo 'Alternatively, you can use XDG directories instead:'
-	einfo '  $ mkdir -p $HOME/.local/share/todo'
-	einfo '  $ mkdir -p $HOME/.config/todo'
-	einfo "  $ bzcat /usr/share/doc/${PF}/todo.cfg.bz2 > \$HOME/.config/todo/config"
-	einfo
-	einfo 'You can then edit this file as you see fit.'
-	einfo 'Enjoy!'
-	einfo
-	ewarn 'The Gentoo-specific todocli and todotxt aliases have been removed.'
-	ewarn 'If you still need them, add the following lines to your ~/.bashrc:'
-	ewarn
-	ewarn 'alias todocli=todo.sh'
-	ewarn 'complete -F _todo todocli'
+	if [[ -z "${REPLACING_VERSIONS}" ]]; then
+		einfo 'While todo.sh should work out of the box,'
+		einfo 'please check the CONFIGURATION section of the README at:'
+		einfo
+		einfo "  /usr/share/doc/${PF}/README.md.bz2"
+	fi
 }
