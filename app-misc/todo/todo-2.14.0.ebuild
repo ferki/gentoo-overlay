@@ -30,7 +30,7 @@ src_prepare() {
 }
 
 src_install() {
-	emake DESTDIR="${D}" prefix="${EPREFIX}/usr" CONFIG_DIR="${EPREFIX}/etc" BASH_COMPLETION="$(get_bashcompdir)" install
+	emake DESTDIR="${D}" prefix="${EPREFIX}/usr" CONFIG_DIR="${EPREFIX}/etc" install
 	einstalldocs
 }
 
